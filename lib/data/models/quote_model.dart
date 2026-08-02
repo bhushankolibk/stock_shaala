@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'live_quote_model.dart';
 
 /// A market quote for a stock or index.
 class Quote extends Equatable {
@@ -12,6 +13,7 @@ class Quote extends Equatable {
   final double? week52High;
   final double? week52Low;
   final double? previousClose;
+  final String? instrumentKey;
 
   const Quote({
     required this.symbol,
@@ -24,6 +26,7 @@ class Quote extends Equatable {
     this.week52High,
     this.week52Low,
     this.previousClose,
+    this.instrumentKey,
   });
 
   bool get isUp => change >= 0;
@@ -53,6 +56,21 @@ class Quote extends Equatable {
       previousClose: prevClose,
     );
   }
+
+  /// Builds a display Quote from an Upstox Full Market Quote result.
+  factory Quote.fromLiveQuote(String symbol, String name, LiveQuote q,
+          {String? instrumentKey}) =>
+      Quote(
+        symbol: symbol,
+        name: name,
+        price: q.lastPrice,
+        change: q.change,
+        changePercent: q.changePercent,
+        dayHigh: q.high,
+        dayLow: q.low,
+        previousClose: q.close,
+        instrumentKey: instrumentKey,
+      );
 
   @override
   List<Object?> get props => [symbol, price, change, changePercent];

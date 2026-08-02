@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/di/injection.dart';
 import '../../core/services/auth_service.dart';
 import '../../core/services/content_service.dart';
-import '../../core/services/market_api_service.dart';
+import '../../core/services/market_overview_service.dart';
 import '../../core/services/progress_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
@@ -42,8 +42,9 @@ class _HomePageState extends State<HomePage> {
     _xp = progress.xp;
 
     try {
-      final indices = await sl<MarketApiService>().fetchIndices();
-      final stocks = await sl<MarketApiService>().fetchStockQuotes();
+      final overview = sl<MarketOverviewService>();
+      final indices = await overview.fetchIndices();
+      final stocks = await overview.fetchStockQuotes();
       stocks.sort((a, b) => b.changePercent.compareTo(a.changePercent));
       final challenge = await sl<ContentService>().dailyChallenge();
       final savedAnswer = sl<ProgressService>().dailyChallengeAnswer;

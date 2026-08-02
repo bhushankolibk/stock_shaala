@@ -10,10 +10,15 @@ import '../services/auth_service.dart';
 import '../services/blogger_service.dart';
 import '../services/content_service.dart';
 import '../services/disclaimer_service.dart';
+import '../services/equity_list_service.dart';
 import '../services/local_db_service.dart';
 import '../services/market_api_service.dart';
+import '../services/market_overview_service.dart';
 import '../services/messaging_service.dart';
 import '../services/progress_service.dart';
+import '../services/stock_news_service.dart';
+import '../services/stock_quote_service.dart';
+import '../services/watchlist_service.dart';
 import '../services/youtube_service.dart';
 import '../../features/simulation/portfolio_repository.dart';
 
@@ -37,6 +42,7 @@ Future<void> setupDependencies() async {
   sl.registerSingleton<MarketApiService>(MarketApiService());
   sl.registerSingleton<ProgressService>(ProgressService(prefs));
   sl.registerSingleton<DisclaimerService>(DisclaimerService(prefs));
+  sl.registerSingleton<WatchlistService>(WatchlistService(prefs));
 
   final content = ContentService(rc);
   await content.init();
@@ -56,6 +62,15 @@ Future<void> setupDependencies() async {
       BloggerService(blogId: blogId, apiKey: apiKey));
   sl.registerSingleton<YouTubeService>(
       YouTubeService(channelId: channelId, apiKey: apiKey));
+
+  final upstoxToken = rc?.getString('upstox_analytics_token') ?? '';
+  sl.registerSingleton<StockNewsService>(
+      StockNewsService(token: upstoxToken));
+  sl.registerSingleton<StockQuoteService>(
+      StockQuoteService(token: upstoxToken));
+  sl.registerSingleton<EquityListService>(EquityListService());
+  sl.registerSingleton<MarketOverviewService>(
+      MarketOverviewService(sl<StockQuoteService>(), sl<EquityListService>()));
 
   // Repositories
   sl.registerSingleton<PortfolioRepository>(

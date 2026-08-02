@@ -12,6 +12,8 @@ import '../../features/learn/concept_cards_page.dart';
 import '../../features/learn/lesson_detail_page.dart';
 import '../../features/quiz/quiz_page.dart';
 import '../../features/simulation/stock_detail_page.dart';
+import '../../features/news/stock_news_page.dart';
+import '../../features/stock_list/stock_list_page.dart';
 import '../../data/models/lesson_model.dart';
 
 class AppRouter {
@@ -41,6 +43,19 @@ class AppRouter {
           );
         },
       ),
+      GoRoute(
+        path: '/news',
+        builder: (_, state) {
+          final args = state.extra as Map<String, dynamic>? ?? {};
+          return StockNewsPage(
+            instrumentKeys:
+                (args['instrumentKeys'] as List? ?? const []).cast<String>(),
+            title: args['title'] as String? ?? 'Stock News',
+          );
+        },
+      ),
+      GoRoute(
+          path: '/stock-list', builder: (_, __) => const StockListPage()),
     ],
     observers: [
       if (sl<AnalyticsService>().observer != null)

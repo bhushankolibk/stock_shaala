@@ -13,4 +13,14 @@ class Fmt {
       '${v >= 0 ? '+' : ''}${v.toStringAsFixed(2)}%';
   static String signedMoney(num v) =>
       '${v >= 0 ? '+' : '-'}${_inr.format(v.abs())}';
+
+  /// Relative time like "5m ago", "3h ago", "2d ago".
+  static String timeAgo(DateTime time) {
+    final diff = DateTime.now().difference(time);
+    if (diff.inMinutes < 1) return 'Just now';
+    if (diff.inMinutes < 60) return '${diff.inMinutes}m ago';
+    if (diff.inHours < 24) return '${diff.inHours}h ago';
+    if (diff.inDays < 7) return '${diff.inDays}d ago';
+    return DateFormat('d MMM').format(time);
+  }
 }

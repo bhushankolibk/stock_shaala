@@ -1,14 +1,17 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../core/constants/stock_universe.dart';
 import '../../core/di/injection.dart';
 import '../../core/services/ad_service.dart';
+import '../../core/services/equity_list_service.dart';
 import '../../core/services/market_api_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/formatters.dart';
 import '../../core/widgets/banner_ad_widget.dart';
 import '../../data/models/quote_model.dart';
+import '../watchlist/widgets/watchlist_star_button.dart';
 import 'portfolio_repository.dart';
 
 class StockDetailPage extends StatefulWidget {
@@ -25,11 +28,13 @@ class _StockDetailPageState extends State<StockDetailPage> {
   List<double> _history = [];
   bool _loading = true;
   String _range = '1mo';
+  String? _instrumentKey;
 
   @override
   void initState() {
     super.initState();
     _load();
+    _resolveInstrumentKey();
   }
 
   Future<void> _load() async {
@@ -50,6 +55,25 @@ class _StockDetailPageState extends State<StockDetailPage> {
     }
   }
 
+  /// Curated stocks resolve instantly; anything found via the full search
+  /// screen is looked up from the cached equity list instead.
+  Future<void> _resolveInstrumentKey() async {
+    final curated = StockUniverse.instrumentKeyFor(widget.symbol);
+    if (curated != null) {
+      if (mounted) setState(() => _instrumentKey = curated);
+      return;
+    }
+    try {
+      final all = await sl<EquityListService>().loadAll();
+      final match = all.where((e) => e.tradingSymbol == widget.symbol);
+      if (mounted && match.isNotEmpty) {
+        setState(() => _instrumentKey = match.first.instrumentKey);
+      }
+    } catch (_) {
+      // News/watchlist actions just stay hidden if this fails.
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +89,23 @@ class _StockDetailPageState extends State<StockDetailPage> {
                     const TextStyle(fontSize: 11, color: AppColors.muted)),
           ],
         ),
+        actions: [
+          if (_instrumentKey != null)
+            Center(
+              child: WatchlistStarButton(
+                symbol: widget.symbol,
+                name: widget.name,
+                instrumentKey: _instrumentKey!,
+                size: 20,
+              ),
+            ),
+          if (_instrumentKey != null)
+            IconButton(
+              icon: const Icon(Icons.article_outlined),
+              tooltip: 'News',
+              onPressed: _openNews,
+            ),
+        ],
       ),
       body: _loading
           ? const Center(
@@ -89,6 +130,14 @@ class _StockDetailPageState extends State<StockDetailPage> {
                   ),
                 ),
     );
+  }
+
+  void _openNews() {
+    if (_instrumentKey == null) return;
+    context.push('/news', extra: {
+      'instrumentKeys': [_instrumentKey!],
+      'title': '${widget.symbol} News',
+    });
   }
 
   Widget _priceHeader() {
