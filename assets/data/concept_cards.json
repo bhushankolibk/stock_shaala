@@ -1,0 +1,226 @@
+[
+  {
+    "id": "c1",
+    "category": "Fundamentals",
+    "term": "Price-to-Earnings (P/E)",
+    "body": "Har ₹1 ki kamaai ke liye investors kitna pay karne ko taiyaar hain — yahi P/E batata hai. P/E = Share Price ÷ EPS. High P/E aksar high growth expectations dikhata hai, lekin iska matlab yeh nahi ki stock achha hai. Low P/E undervalued ya slow-growth company ho sakti hai. Sector ke andar compare karna zaroori hai — IT ka P/E 30 normal lag sakta hai, utility ka 12.",
+    "example": "TCS earnings ₹100/share, price ₹3,900 → P/E = 39x. Iska matlab ₹39 pay kar rahe hain har ₹1 earning ke liye. FMCG sector average P/E 50+ hota hai kyunki growth stable aur predictable hai."
+  },
+  {
+    "id": "c2",
+    "category": "Fundamentals",
+    "term": "Market Capitalisation",
+    "body": "Company ki total market value = Share Price × Total Outstanding Shares. Isse size classify kiya jaata hai: Large-cap (₹20,000 cr+), Mid-cap (₹5,000–20,000 cr), Small-cap (₹5,000 cr se kam). Large-cap relatively stable hote hain, small-cap mein zyaada volatility hoti hai aur potential growth bhi.",
+    "example": "Infosys: Share ₹1,500, 4.2 arab shares → Market cap ≈ ₹6.3 lakh crore (Large-cap). Ek nayi company: Share ₹80, 2 crore shares → Market cap = ₹160 crore (Small-cap)."
+  },
+  {
+    "id": "c3",
+    "category": "Fundamentals",
+    "term": "Dividend",
+    "body": "Company apne profit ka ek hissa shareholders ko cash mein baant sakti hai — ise dividend kehte hain. Yeh company ki financial health aur management ki generosity ko reflect karta hai. Dividend yield = Annual Dividend ÷ Share Price × 100. Stable, mature companies (jaise FMCG, utilities) regular dividend deti hain. Growth companies aksar nahi deti kyunki woh profit reinvest karti hain.",
+    "example": "Coal India ₹25/share dividend deti hai, share price ₹500 → Dividend yield = 5%. ₹1 lakh investment par ₹5,000 saalaana sirf dividend se. Reinvestment bhi zaroor consider karein."
+  },
+  {
+    "id": "c4",
+    "category": "Technical",
+    "term": "Circuit Breaker",
+    "body": "Jab kisi stock ya index ka price ek tay limit se zyaada move karta hai to trading temporarily rok di jaati hai. NSE/BSE par stock circuits 5%, 10%, 20% ke hote hain. Index circuit breaker 10%, 15%, 20% par lagta hai. Upper circuit = sirf buyers, koi seller nahi. Lower circuit = sirf sellers, koi buyer nahi. Circuit ka matlab liquidity ekdam khatam ho jaati hai us time.",
+    "example": "Koi company good news announce kare → stock 20% upper circuit par. Agar aap us time bechna chahein to nahi bech sakte — koi buyer itne daam mein nahi milega yeh alag issue, bal ki circuit mein koi match nahi hota."
+  },
+  {
+    "id": "c5",
+    "category": "Technical",
+    "term": "Volume",
+    "body": "Ek period mein kitne shares trade hue — yahi volume hai. Volume akela kuch nahi batata; price ke saath milkar meaningful hota hai. Price up + Volume up → Genuine buying. Price up + Volume down → Weak move, nahi tikta. Price down + Volume up → Panic selling. Volume average se 3-4 guna high ho to koi bada event ho sakta hai.",
+    "example": "Normally HDFC Bank mein 50 lakh shares/day trade hote hain. Ek din 2 crore shares trade hue aur price 3% badha → Strong institutional buying ki possibility. Yeh educational observation hai."
+  },
+  {
+    "id": "c6",
+    "category": "Fundamentals",
+    "term": "Bull vs Bear Market",
+    "body": "Bull market = keemtein 20%+ badhti hain apne recent low se, sustained period mein. Bear market = keemtein 20%+ girti hain apne recent high se. Bull market mein optimism, low unemployment, strong GDP. Bear market mein fear, pessimism, economic slowdown. India mein 2003-2008 aur 2014-2017 strong bull markets the. 2008, 2020 bear phases the.",
+    "example": "Naam ka logic: Bull (saand) seengh upar maarta hai = prices badhna. Bear (bhaluu) panja neeche maarta hai = prices girna. Yaad karna aasaan hai! Donon normal market cycles hain."
+  },
+  {
+    "id": "c7",
+    "category": "Fundamentals",
+    "term": "EBITDA",
+    "body": "Earnings Before Interest, Taxes, Depreciation & Amortisation. Yeh company ke core operating performance ko measure karta hai, financing aur non-cash charges hatakar. EBITDA Margin = EBITDA ÷ Revenue × 100. Higher margin = better operational efficiency. Do alag industries compare karte waqt EBITDA zyaada useful hai.",
+    "example": "Company A: Revenue ₹1,000 cr, EBITDA ₹200 cr → 20% margin. Company B: Revenue ₹800 cr, EBITDA ₹200 cr → 25% margin. Company B zyaada efficient hai operationally, bhale hi revenue kam ho."
+  },
+  {
+    "id": "c8",
+    "category": "Risk",
+    "term": "Stop Loss",
+    "body": "Ek pre-decided exit price jahan aap apni position band kar dete hain — chahe profit ho ya loss — taaki expected se zyaada nuksaan na ho. Stop Loss = discipline ka tool. Bina stop loss ke, 'recover ho jaayega' ki umeed mein chhoti loss badi ban jaati hai. Trailing stop loss bhi hota hai jo price ke saath saath upar aata rehta hai.",
+    "example": "₹100 par khareeda, stop loss ₹92 → max 8% risk. Agar price ₹120 ho jaaye to stop loss ₹110 par shift karo (trailing) taaki kuch profit bhi protect ho. Yeh risk management ka basic concept hai."
+  },
+  {
+    "id": "c9",
+    "category": "Fundamentals",
+    "term": "Blue-Chip Stock",
+    "body": "Badi, financially strong, established aur consistent performance wali companies ke shares. Inka revenue aur profit track record strong hota hai. Generally large-cap hoti hain, kaafi dividend deti hain, aur market downturns mein comparatively kam girti hain. Naam poker chips se aaya — blue chips sabse high value ke the.",
+    "example": "Reliance Industries, TCS, HDFC Bank, Infosys, HUL — yeh India ki blue-chip companies hain. Economic crisis mein bhi yeh survive karti hain. Lekin 'safe' ka matlab 'guaranteed return' nahi hota kabhi bhi."
+  },
+  {
+    "id": "c10",
+    "category": "Risk",
+    "term": "Compounding",
+    "body": "Jab returns par bhi returns milte hain — paisa exponentially badhta hai. Iska jaadu samay ke saath dikhta hai. Rule of 72: 72 ÷ Interest Rate = Paisa double hone ke saal. Jitna jaldi start karein, compounding ka utna zyaada fayda. 25 saal mein shuru karna 35 saal se kahin behtar hai, chahe chhoti rakam hi kyun na ho.",
+    "example": "₹10,000, 12% saalaana: 10 saal → ₹31,058. 20 saal → ₹96,463. 30 saal → ₹2,99,599. Shuruaat se sirf 10 saal baad mein paisa 10 guna ho gaya! Yeh power of compounding hai."
+  },
+  {
+    "id": "c11",
+    "category": "Fundamentals",
+    "term": "Book Value Per Share",
+    "body": "Company ki total net worth (assets − liabilities) ko total shares se divide karke milta hai. P/B Ratio = Share Price ÷ Book Value Per Share. P/B 1 se kam matlab share apni actual asset value se sasta mil raha hai (theoretically). Banking stocks ke liye P/B kaafi use hota hai kyunki unka business mainly assets/liabilities based hota hai.",
+    "example": "Bank ke paas assets ₹10,000 cr, liabilities ₹8,500 cr → Net worth ₹1,500 cr. Shares 100 crore → Book value ₹15/share. Share price ₹12 → P/B = 0.8 (below book). Kya yeh buy signal hai? Context dekhna padega."
+  },
+  {
+    "id": "c12",
+    "category": "Technical",
+    "term": "Moving Average (MA)",
+    "body": "Pichhle N dino ki closing prices ka average, ek smooth line mein. Short-term noise hatakar trend samajhna aasaan hota hai. SMA (Simple Moving Average) = seedha average. EMA (Exponential Moving Average) = recent prices ko zyaada weight. Common: 20-day (short-term), 50-day (medium), 200-day (long-term). Price > 200 DMA = generally bullish zone.",
+    "example": "50-day MA ₹450, price ₹480 → Bullish setup. Price 200-day MA (₹500) ke neeche gir gayi → Bears control mein. 50 DMA 200 DMA ko upar cross kare = 'Golden Cross' — bullish signal. Yeh tools hain, guarantee nahi."
+  },
+  {
+    "id": "c13",
+    "category": "Technical",
+    "term": "RSI (Relative Strength Index)",
+    "body": "RSI ek momentum oscillator hai jo 0 se 100 ke beech rehta hai. RSI > 70 = Overbought (price bahut tezi se badha, correction aa sakta hai). RSI < 30 = Oversold (price bahut gira, bounce possible). RSI midline (50) cross karna trend change indicate karta hai. Akele use na karein — other indicators ke saath confirm karein.",
+    "example": "Reliance RSI 78 ho gayi → Technically overbought. Isda matlab automatically sell nahi — RSI 80+ par bhi stock aur badh sakta hai strong trend mein. 'Overbought' = caution, 'bearish confirmation' nahi. Sirf educational."
+  },
+  {
+    "id": "c14",
+    "category": "Technical",
+    "term": "MACD",
+    "body": "Moving Average Convergence Divergence. Yeh do EMAs (12-day aur 26-day) ka difference dikhata hai. MACD Line aur Signal Line (9-day EMA of MACD) ke cross se signals milte hain. MACD > Signal = Bullish crossover. MACD < Signal = Bearish crossover. Histogram = donon lines ka difference. Iska use trend direction aur momentum measure karne mein hota hai.",
+    "example": "MACD line -5 se +2 par aa gayi aur Signal line ko cross kiya → Bullish signal. Agar yeh oversold zone mein ho (RSI bhi confirm kare) → Stronger indication. Lekin koi indicator 100% accurate nahi hota."
+  },
+  {
+    "id": "c15",
+    "category": "Fundamentals",
+    "term": "Return on Equity (ROE)",
+    "body": "ROE = Net Profit ÷ Shareholders' Equity × 100. Yeh batata hai company aapke invested money par kitna return generate kar rahi hai. 15%+ ROE generally good mana jaata hai. Consistently high ROE = management kaabil hai capital allocate karne mein. Lekin high debt se bhi ROE artificially high ho sakta hai — DuPont analysis se yeh samjho.",
+    "example": "Company A: Profit ₹200 cr, Equity ₹1,000 cr → ROE = 20%. Company B: Profit ₹200 cr, Equity ₹2,000 cr → ROE = 10%. Company A apne shareholders' money par zyaada return de rahi hai. Warren Buffett consistently 20%+ ROE companies prefer karte hain."
+  },
+  {
+    "id": "c16",
+    "category": "Fundamentals",
+    "term": "Debt-to-Equity (D/E) Ratio",
+    "body": "D/E = Total Debt ÷ Shareholders' Equity. Yeh batata hai company ne apna business kitna debt se fund kiya aur kitna equity se. D/E < 1 = debt equity se kam (generally safer). D/E > 2 = high leverage (risky, especially recession mein). Capital-intensive sectors (infra, steel) mein naturally high D/E hota hai. IT, FMCG mein low ya zero debt hota hai.",
+    "example": "Infrastructure company: Debt ₹5,000 cr, Equity ₹2,000 cr → D/E = 2.5. IT company: Debt ₹0, Equity ₹10,000 cr → D/E = 0. Economic stress mein high D/E companies zyaada affected hoti hain kyunki interest payment mandatory hoti hai."
+  },
+  {
+    "id": "c17",
+    "category": "Fundamentals",
+    "term": "Free Cash Flow (FCF)",
+    "body": "FCF = Operating Cash Flow − Capital Expenditure. Yeh actual cash hai jo business generate karta hai after investing in itself. Profit se zyaada important: company 'accounting profit' dikha sakti hai par cash produce nahi kar sakti. Consistent positive FCF = business genuinely paisa kama raha hai. FCF se hi dividend, buyback, debt repayment hoti hai.",
+    "example": "Company operating cash ₹500 cr generate karti hai, factories/equipment par ₹200 cr kharcha → FCF = ₹300 cr. Yeh ₹300 cr shareholders ke liye available hai — dividend, share buyback, ya growth investment ke liye. 'Cash is King'."
+  },
+  {
+    "id": "c18",
+    "category": "Investment",
+    "term": "Mutual Fund",
+    "body": "Bahut saare investors ka paisa ek jagah collect hokar professional fund manager dwara manage kiya jaata hai — yahi mutual fund hai. Investors ko units milte hain NAV ke hisaab se. Types: Equity (stocks), Debt (bonds), Hybrid (dono), Index Fund (index track karna). SEBI regulated hain. Direct plan mein no distributor commission — zyaada returns.",
+    "example": "1,000 investors ₹10,000-10,000 lagate hain → ₹1 crore pool. Fund manager yeh paisa stocks mein lagaata hai. Har investor ka risk aur return distribute hota hai. Akele stock pick karne se zyaada diversified aur managed approach."
+  },
+  {
+    "id": "c19",
+    "category": "Investment",
+    "term": "SIP (Systematic Investment Plan)",
+    "body": "Ek fixed amount har month mutual fund mein automatically invest karna — yahi SIP hai. Rupee Cost Averaging: market upar ho to kam units milti hain, neeche ho to zyaada. Overall average cost smooth ho jaati hai. ₹500/month se bhi shuru kar sakte hain. Discipline enforce karta hai aur timing ki tension nahi.",
+    "example": "₹5,000/month SIP, 15 saal, 12% returns → Total investment ₹9 lakh, expected corpus ≈ ₹25 lakh (approximate). Market giri ho tab bhi SIP chalate rehna chahiye — wahi time sabse zyaada units milti hain. Yeh sirf calculation estimate hai."
+  },
+  {
+    "id": "c20",
+    "category": "Investment",
+    "term": "NAV (Net Asset Value)",
+    "body": "Mutual fund ki ek unit ki current value = NAV. NAV = (Total Assets − Liabilities) ÷ Total Units. Har din market close hone ke baad calculate hoti hai. High NAV ka matlab 'expensive' nahi — yeh sirf fund ki age aur performance reflect karta hai. ₹10 NAV aur ₹100 NAV fund mein se better choose karna performance dekhkar karein, NAV nahi.",
+    "example": "Fund ki 1 crore units hain, total portfolio value ₹50 crore → NAV = ₹50. Aap 200 units khareedein → ₹10,000 lagaya. Kal NAV ₹52 ho → aapki holding value ₹10,400. NAV growth = return."
+  },
+  {
+    "id": "c21",
+    "category": "Market Mechanics",
+    "term": "Demat Account",
+    "body": "Demat (Dematerialised) account mein shares electronic form mein rakhe jaate hain — jaise bank account mein paisa. India mein CDSL aur NSDL yeh service dete hain. Broker aapka DP (Depository Participant) hota hai. Trading account se order lagaate hain, Demat account mein shares reflect hote hain. Dono alag hain lekin linked.",
+    "example": "Zerodha, Groww, Upstox jaise brokers aapka trading + demat account open karte hain. Aap 10 Wipro shares khareedate hain → Demat account mein '10 Wipro' electronically credit. Physical share certificate ab exist nahi karte zyaadatar."
+  },
+  {
+    "id": "c22",
+    "category": "Market Mechanics",
+    "term": "SEBI",
+    "body": "Securities and Exchange Board of India — stock market ka regulator. 1992 mein establish hua. Investors protect karna, market development karna, aur fair practices ensure karna SEBI ka kaam hai. Insider trading, fraud, manipulation par action leta hai. Mutual funds, brokers, exchanges — sab SEBI ke under registered hain.",
+    "example": "SEBI ne 2023-24 mein F&O regulations tight kiye, small investors ko protect karne ke liye. SEBI ke SCORES portal par aap broker ke khilaaf complaint bhi file kar sakte hain. SEBI hai to market mein trust hai."
+  },
+  {
+    "id": "c23",
+    "category": "Market Mechanics",
+    "term": "Short Selling",
+    "body": "Pehle share becho, baad mein khareedne ka plan — yeh short selling hai. Aap mante ho ki price giregi. Short kiya ₹100 par, price ₹80 ho gayi → ₹20 profit. Price ₹120 ho gayi → ₹20 loss. Short selling mein theoretically unlimited loss possible hai (price kitni bhi badh sakti hai). India mein intraday short selling allowed hai.",
+    "example": "Kisi company ka scam expose hoga ऐसा pata chala → Short sell karo ₹200 par. News aane par price ₹120 → ₹80/share profit. Lekin yeh risky hai — news pehle se known ho to SEBI insider trading maane. Educational concept hai."
+  },
+  {
+    "id": "c24",
+    "category": "Risk",
+    "term": "Beta",
+    "body": "Beta batata hai stock market se kitna zyaada ya kam move karta hai. Beta = 1: Market ke saath exactly chalega. Beta > 1: Market se zyaada move (jaise 1.5 beta → market 10% badhe to stock 15% badhe). Beta < 1: Market se kam volatile (defensive stocks). Beta < 0: Market ke ulta chalega (rare). High beta = high risk + high potential reward.",
+    "example": "Nifty 5% badha. Stock A ka beta 1.8 → expected move +9%. Stock B ka beta 0.6 → expected move +3%. Bear market mein high beta stocks zyaada giraavat se peedit hote hain. FMCG, pharma ka beta low hota hai."
+  },
+  {
+    "id": "c25",
+    "category": "Risk",
+    "term": "Liquidity Risk",
+    "body": "Jab aap kisi share ko fair price par easily sell nahi kar sakte — woh liquidity risk hai. Small-cap aur illiquid stocks mein yeh problem zyaada hoti hai. Bid-Ask Spread jitna wide, liquidity utni kam. Ek large order se hi price crash kar sakti hai illiquid stock mein. Emergency mein paisa chahiye ho to illiquid stock holder hone par problem hoti hai.",
+    "example": "Aapne ek small company ke 10,000 shares ₹50 par khareeede. Bechne ki koshish ki to market mein sirf ₹45 ka buyer mila, upar se order bhi ₹2 lakh tak hi absorb ho sakta hai. Baaki shares aur neeche bechne padenge. Yeh liquidity risk hai."
+  },
+  {
+    "id": "c26",
+    "category": "Corporate Actions",
+    "term": "Stock Split",
+    "body": "Company apne shares ko chhote pieces mein tod deti hai — price proportionally kum ho jaati hai, lekin total holding value same rehti hai. 2:1 split → ek share ke 2 ban gaye, price aadhi. Liquidity badhti hai kyunki share price kam hone se zyaada log khareed sakte hain. Fundamentals ya company value mein koi change nahi hota.",
+    "example": "MRF ka share ₹1,00,000 tha — affordable nahi tha retail investors ke liye. 10:1 split se price ₹10,000 par aa jaati. Aapke paas 1 share tha → 10 ho gaye, par value same ₹1,00,000. Split good news jaise lagta hai par actual value mein fark nahi."
+  },
+  {
+    "id": "c27",
+    "category": "Corporate Actions",
+    "term": "Buyback",
+    "body": "Company apne hi shares open market se wapas khareedti hai aur cancel kar deti hai — ise share buyback kehte hain. Total shares kam hote hain → EPS badhti hai → remaining shareholders ki holding zyaada valuable hoti hai. Iska signal: management sochti hai stock undervalued hai. Excess cash utilize karna bhi ek reason hota hai.",
+    "example": "TCS ne multiple buybacks kiye hain. 100 crore shares mein se 5 crore buyback → 95 crore shares reh gaye. Profit same ₹20,000 cr → EPS ₹200 se badhar ₹210 ho gayi. Remaining shareholders ko fayda. Tax efficient way to return cash to shareholders."
+  },
+  {
+    "id": "c28",
+    "category": "Fundamentals",
+    "term": "Margin of Safety",
+    "body": "Benjamin Graham aur Warren Buffett ka concept: kisi stock ko uski estimated intrinsic value se kaafi kam daam par khareedna — yahi margin of safety hai. Agar calculation mein galti ho tab bhi loss se bacha sake, isliye yeh buffer maintain karte hain. Aam recommendation: intrinsic value se 30-40% discount par khareedna.",
+    "example": "Aapne calculate kiya ki company ki intrinsic value ₹200/share hai. Margin of safety ke saath ₹140 ya usse kam par hi khareedna chahiye. Price ₹140 → 30% discount. Agar calculation galat bhi ho to bhi kaafi protected. Yeh value investing ka core principle hai."
+  },
+  {
+    "id": "c29",
+    "category": "Investment",
+    "term": "Index Fund",
+    "body": "Jo fund kisi index (jaise NIFTY 50) ko exactly track karta hai — woh index fund hai. Fund manager ka koi active decision nahi, bas index copy karo. Expense ratio bahut low hota hai (0.1%-0.2%). Research dikhata hai ki zyaadatar active fund managers long run mein index ko beat nahi kar paate. Beginners ke liye excellent starting point.",
+    "example": "NIFTY 50 Index Fund: Jab NIFTY 2% badhe, fund bhi ~2% badha. TER (Total Expense Ratio) 0.1% — matlab ₹10,000 par sirf ₹10/saal charge. Active fund TER 1-2% hota hai. 20 saal mein yeh 1-2% ka fark lakhon mein badal sakta hai."
+  },
+  {
+    "id": "c30",
+    "category": "Market Mechanics",
+    "term": "T+1 Settlement",
+    "body": "India mein 2023 se T+1 settlement hai — Trade Date + 1 working day. Matlab aaj khareedne par kal shares Demat mein aate hain aur aaj bechne par kal paisa account mein. Pehle T+2 tha. T+1 se capital zyaada efficient use hoti hai. Intraday mein usi din settlement ho jaata hai (same session).",
+    "example": "Aap Monday ko 100 shares khareedte hain → Tuesday ko woh shares Demat mein credit ho jaayenge. Monday ko bechte hain → Tuesday ko paisa trading account mein. Weekend ya holiday T+1 count mein nahi aate. Yeh basic mechanics samajhna zaroori hai."
+  },
+  {
+    "id": "c31",
+    "category": "Fundamentals",
+    "term": "Earnings Per Share (EPS)",
+    "body": "EPS = Net Profit ÷ Total Outstanding Shares. Har share kitna profit kamaata hai — yahi EPS batata hai. Diluted EPS: Stock options aur convertibles include karke calculate hota hai (more conservative). Trailing EPS: pichhle 12 mahine ka. Forward EPS: aane wale 12 mahine ka estimated. EPS growth consistently badhna chahiye healthy company mein.",
+    "example": "Wipro net profit ₹15,000 crore, total shares 5.4 arab → EPS ≈ ₹27.8. Agar EPS har saal 15% badh raha ho to growth visible hai. P/E = Price ÷ EPS, to EPS badha to P/E automatically kam hoga — good sign for valuation."
+  },
+  {
+    "id": "c32",
+    "category": "Taxation",
+    "term": "LTCG vs STCG",
+    "body": "Long Term Capital Gain (LTCG): Stocks 12+ mahine hold karne par. Equity par ₹1.25 lakh tak LTCG tax-free hai (FY2024-25 se), usse upar 12.5% (indexation nahi). Short Term Capital Gain (STCG): 12 mahine se kam mein becha. Equity par 20% STCG tax. Tax implications trading decisions par asar daal sakti hain — tax-loss harvesting bhi possible hai.",
+    "example": "₹50,000 profit 14 mahine mein → LTCG hai. ₹1.25 lakh tak tax-free. Upar ka 12.5% tax. ₹80,000 profit 8 mahine mein → STCG → 20% = ₹16,000 tax. Ek saal hold karna often tax-efficient hota hai. Consult a tax professional for your specific situation."
+  }
+]

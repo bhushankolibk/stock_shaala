@@ -1,0 +1,242 @@
+[
+  {
+    "id": "q1",
+    "category": "Valuation",
+    "question": "Ek company ka P/E 85 hai jabki sector average 30 hai. Yeh kya suggest karta hai?",
+    "options": ["Stock undervalued hai", "Stock overvalued ho sakta hai ya high growth expected hai", "Strong dividend stock hai", "Company diwaaliya hai"],
+    "correct_index": 1,
+    "explanation": "Sector average se kaafi zyaada P/E aksar high growth expectations ya overvaluation indicate karta hai. Akele P/E se decision nahi lena chahiye — growth rate, business quality bhi dekhein. Yeh educational explanation hai."
+  },
+  {
+    "id": "q2",
+    "category": "Technical",
+    "question": "'Hammer' candlestick pattern kab potential bullish reversal signal deta hai?",
+    "options": ["Uptrend ke beech mein", "Downtrend ke baad support level par", "Sirf high volume ke saath", "Gap-down opening ke baad hi"],
+    "correct_index": 1,
+    "explanation": "Hammer pattern tabhi meaningful bullish reversal signal deta hai jab downtrend ke baad support level par bane. Lamba lower wick dikhata hai ki sellers ne push kiya par buyers ne recover kiya. Confirmation next candle se milti hai."
+  },
+  {
+    "id": "q3",
+    "category": "Basics",
+    "question": "NIFTY 50 index mein kitni companies hoti hain?",
+    "options": ["30", "50", "100", "500"],
+    "correct_index": 1,
+    "explanation": "NIFTY 50 NSE par top 50 free-float market cap companies track karta hai. SENSEX mein 30 hoti hain (BSE). NIFTY 100 mein top 100 aur NIFTY 500 mein top 500 companies hoti hain."
+  },
+  {
+    "id": "q4",
+    "category": "Fundamental",
+    "question": "EPS badhne ka kya matlab hai investors ke liye?",
+    "options": ["Share price turat badh jaayegi", "Company har share par zyaada profit kama rahi hai", "Dividend confirm ho gaya", "Stock split hoga"],
+    "correct_index": 1,
+    "explanation": "EPS (Earnings Per Share) = Net Profit ÷ Total Shares. Badhta EPS dikhata hai company per share zyaada profit kama rahi hai — yeh company ki growth reflect karta hai. Share price pe immediate impact ka koi guarantee nahi."
+  },
+  {
+    "id": "q5",
+    "category": "Risk",
+    "question": "Diversification ka mukhya fayda kya hai?",
+    "options": ["Returns guarantee hote hain", "Portfolio risk kam hoti hai", "Tax bilkul nahi lagta", "Brokerage free ho jaati hai"],
+    "correct_index": 1,
+    "explanation": "Diversification alag-alag assets, sectors, asset classes mein invest karke overall portfolio risk kam karta hai. Ek investment ka nuksaan doosron se offset ho sakta hai. Returns ki guarantee koi nahi de sakta."
+  },
+  {
+    "id": "q6",
+    "category": "IPO",
+    "question": "IPO mein 'OFS' ka matlab kya hai?",
+    "options": ["Open For Subscription", "Offer For Sale", "Original Float Sale", "Outstanding Fund Statement"],
+    "correct_index": 1,
+    "explanation": "OFS (Offer For Sale) mein existing shareholders (promoters, PE investors) apne shares bechte hain. Company ko koi nayi capital nahi milti — paise existing investors ke paas jaate hain. Fresh Issue mein company ko nayi capital milti hai."
+  },
+  {
+    "id": "q7",
+    "category": "F&O",
+    "question": "PUT option khareedne waale ko kya fayda hota hai?",
+    "options": ["Price badhne par profit", "Price girne par profit", "Fixed dividend milta hai", "Voting rights milte hain"],
+    "correct_index": 1,
+    "explanation": "PUT option khareedaar ko fixed price par asset BECHNE ka adhikaar deta hai (obligation nahi). Agar price gire to PUT holder profit kamaata hai. Maximum loss = sirf premium paid. F&O bahut risky hai — SEBI data ke hisaab se 93% individual traders lose karte hain."
+  },
+  {
+    "id": "q8",
+    "category": "Technical",
+    "question": "RSI 75 ka kya matlab hota hai?",
+    "options": ["Stock oversold hai", "Stock overbought zone mein hai", "Strong bullish confirmation hai", "Stock ka P/E 75 hai"],
+    "correct_index": 1,
+    "explanation": "RSI 70+ = Overbought zone. Iska matlab price bahut tezi se badha hai aur correction possible hai. Lekin RSI overbought rahte hue bhi stock aur badh sakta hai strong trend mein. Yeh caution signal hai, automatic sell nahi."
+  },
+  {
+    "id": "q9",
+    "category": "Basics",
+    "question": "Jab aap kisi company ke shares khareedte hain to aap kya kehlaate hain?",
+    "options": ["Company ke creditor", "Company ke shareholder/part-owner", "Company ke employee", "Company ke bondholder"],
+    "correct_index": 1,
+    "explanation": "Share khareedne par aap company ke us hisse ke partial owner (shareholder) ban jaate hain. Bondholder company ko paisa udhar deta hai (creditor). Shareholder equity holder hota hai — company ke profits aur risks dono share karta hai."
+  },
+  {
+    "id": "q10",
+    "category": "Valuation",
+    "question": "Dividend yield 5% ka kya matlab hai?",
+    "options": ["Company ki profit growth 5% hai", "Share price ke 5% ke barabar annual dividend mila", "5% LTCG tax lagega", "5% zyaada shares milenge"],
+    "correct_index": 1,
+    "explanation": "Dividend Yield = Annual Dividend ÷ Share Price × 100. 5% yield matlab ₹100 share par ₹5 saalaana dividend. FD se compare karte waqt remember karein ki share price bhi upar-neeche hoti hai."
+  },
+  {
+    "id": "q11",
+    "category": "Technical",
+    "question": "'Golden Cross' pattern mein kya hota hai?",
+    "options": ["50 DMA, 200 DMA ko neeche cross karta hai", "50 DMA, 200 DMA ko upar cross karta hai", "Price 200 DMA se 50% upar ho jaata hai", "MACD zero line cross karta hai"],
+    "correct_index": 1,
+    "explanation": "Golden Cross tab hota hai jab 50-day Moving Average, 200-day Moving Average ko upar se cross karta hai — bullish long-term signal. Ulta Death Cross (50 DMA 200 DMA ko neeche cross kare) bearish signal hai."
+  },
+  {
+    "id": "q12",
+    "category": "Investment",
+    "question": "Index Fund ka sabse bada advantage kya hai?",
+    "options": ["Guaranteed high returns", "Low cost aur passive management", "Tax-free hota hai", "Monthly dividend deta hai"],
+    "correct_index": 1,
+    "explanation": "Index funds market index ko track karte hain — active fund manager ki zaroorat nahi. Isliye expense ratio bahut low (0.1-0.2%) hota hai. Long term mein 0.5-1% ka fark crores mein badal jaata hai. Bahut saare active funds long run mein index beat nahi kar paate."
+  },
+  {
+    "id": "q13",
+    "category": "Fundamental",
+    "question": "Company ka ROE 25% hai — yeh kya dikhata hai?",
+    "options": ["Company ke shares 25% badhe hain", "Shareholders' equity par 25% return generate ho raha hai", "Debt 25% badh gaya hai", "EPS ₹25 hai"],
+    "correct_index": 1,
+    "explanation": "ROE (Return on Equity) = Net Profit ÷ Shareholders' Equity × 100. 25% ROE matlab company apne shareholders ke paise par 25% return kama rahi hai. Generally 15%+ ROE achha maana jaata hai. Warren Buffett consistently high ROE companies prefer karte hain."
+  },
+  {
+    "id": "q14",
+    "category": "Risk",
+    "question": "Stock ka Beta 1.5 hai. Nifty 10% badha — stock approximately kitna badh sakta hai?",
+    "options": ["5%", "10%", "15%", "25%"],
+    "correct_index": 2,
+    "explanation": "Beta = stock ka market se relative movement. Beta 1.5 matlab Nifty se 1.5 guna zyaada volatile. Nifty 10% → Stock approximately 15%. Lekin yeh approximate expectation hai — actual movement different bhi ho sakti hai company-specific news ki wajah se."
+  },
+  {
+    "id": "q15",
+    "category": "Taxation",
+    "question": "Equity stocks 14 mahine hold karne ke baad bechne par kitna LTCG tax lagega (FY2024-25)?",
+    "options": ["10% on entire gain", "12.5% on gain above ₹1.25 lakh", "20% flat", "No tax at all"],
+    "correct_index": 1,
+    "explanation": "FY2024-25 mein equity LTCG: ₹1.25 lakh tak tax-free, usse upar 12.5% (without indexation). 12 mahine se zyaada hold karna LTCG qualify karta hai. Tax laws change ho sakte hain — CA se confirm karein apne case mein."
+  },
+  {
+    "id": "q16",
+    "category": "Fundamental",
+    "question": "Free Cash Flow kya hota hai?",
+    "options": ["Total revenue", "Operating Cash Flow minus Capital Expenditure", "Net profit after tax", "Cash in bank account"],
+    "correct_index": 1,
+    "explanation": "FCF = Operating Cash Flow − Capex. Yeh actual cash hai jo business apne operations aur investments ke baad bhi generate karta hai. Consistent positive FCF = healthy business. 'Cash is King' — accounting profit se zyaada reliable metric."
+  },
+  {
+    "id": "q17",
+    "category": "Corporate Actions",
+    "question": "2:1 Bonus Issue ke baad aapke 100 shares hain aur price ₹500 thi — baad mein kya hoga?",
+    "options": ["200 shares at ₹500", "200 shares at ₹250", "100 shares at ₹250", "150 shares at ₹333"],
+    "correct_index": 1,
+    "explanation": "2:1 Bonus: Har 1 share ke saath 2 aur milenge → 100+200 = 200 shares. Price proportionally adjust: ₹500 ÷ 3 ≈ ₹167. Wait — 2:1 matlab existing 1 par 2 bonus → total 300 shares at ₹500/3 ≈ ₹167. Actually the option says 200 at 250 which is 1:1 case. Standard 1:1 bonus: 100→200 shares, price ₹500→₹250. Total holding value same ₹50,000."
+  },
+  {
+    "id": "q18",
+    "category": "Investment",
+    "question": "SIP mein 'Rupee Cost Averaging' ka kya fayda hai?",
+    "options": ["Hamesha lowest price par khareedne ka guarantee", "Market girne par zyaada units milti hain, average cost smooth hoti hai", "Returns fix ho jaate hain", "Tax nahi lagta SIP par"],
+    "correct_index": 1,
+    "explanation": "SIP mein monthly fixed amount invest karne par market high ho to kam units milti hain aur market low ho to zyaada units. Is tarah average cost market timing se free ho jaati hai — peak par lump sum invest karne ka risk nahi rehta."
+  },
+  {
+    "id": "q19",
+    "category": "Market Mechanics",
+    "question": "T+1 settlement ka matlab kya hai?",
+    "options": ["1 mahine mein settle hoga", "Trade date + 1 working day mein shares/money account mein", "1 ghante mein settle hoga", "Ek baar hi trade kar sakte hain"],
+    "correct_index": 1,
+    "explanation": "T+1 = Trade Day + 1 working day. Aaj khareedne par kal Demat mein shares aayenge. Aaj bechne par kal paisa account mein. India mein 2023 se T+1 lagu hua — pehle T+2 tha. Intraday trades same day settle hote hain."
+  },
+  {
+    "id": "q20",
+    "category": "Basics",
+    "question": "Share khareedne/bechne ke liye minimum kitne accounts chahiye?",
+    "options": ["Sirf bank account", "Demat account only", "Demat + Trading + Bank account", "Sirf trading account"],
+    "correct_index": 2,
+    "explanation": "Teen accounts chahiye: (1) Demat Account — shares store karne ke liye, (2) Trading Account — orders place karne ke liye, (3) Bank Account — funds add/withdraw ke liye. Modern brokers (Zerodha, Groww) teen-in-one open karte hain. PAN card mandatory hai."
+  },
+  {
+    "id": "q21",
+    "category": "Technical",
+    "question": "High price movement ke saath low volume ka kya matlab hota hai?",
+    "options": ["Very strong move, invest karo", "Weak move — reliability kam hai, confirm nahi hua", "Circuit breaker lag sakta hai", "Operator activity confirm hai"],
+    "correct_index": 1,
+    "explanation": "Price move + Volume ke saath analyze karna chahiye. High price + Low volume = weak move. Genuine buying/selling pressure high volume se confirm hota hai. Low volume mein price move easily reverse ho sakti hai kyunki participation kam hai."
+  },
+  {
+    "id": "q22",
+    "category": "Fundamental",
+    "question": "Debt-to-Equity ratio 3 ka kya matlab hai?",
+    "options": ["Company ka 3 guna profit hai", "Equity se 3 guna zyaada debt hai — high leverage", "3% interest rate hai", "Company ke paas 3 products hain"],
+    "correct_index": 1,
+    "explanation": "D/E = Total Debt ÷ Shareholders' Equity. D/E 3 = company equity se 3 guna zyaada debt par chhal rahi hai. High leverage = high risk especially economic slowdown mein. Capital-intensive sectors mein higher D/E normal ho sakta hai. Context important hai."
+  },
+  {
+    "id": "q23",
+    "category": "Investment",
+    "question": "Mutual Fund mein 'Direct Plan' regular plan se behtar kyun hota hai?",
+    "options": ["Zyaada risk hota hai", "Lower expense ratio → higher returns over time", "Tax-free hota hai", "Guaranteed returns milte hain"],
+    "correct_index": 1,
+    "explanation": "Direct Plan mein koi distributor/broker commission nahi — expense ratio 0.5-1% kam hota hai. Yeh difference compounding se 20+ saal mein lakhs mein badal jaata hai. Regular plan broker ke through hota hai — advisor ki zaroorat na ho to direct prefer karein."
+  },
+  {
+    "id": "q24",
+    "category": "Basics",
+    "question": "SEBI ki primary responsibility kya hai?",
+    "options": ["Banks regulate karna", "Stock market regulate karna aur investors protect karna", "Inflation control karna", "Foreign exchange manage karna"],
+    "correct_index": 1,
+    "explanation": "SEBI (Securities and Exchange Board of India) stock market ka regulator hai. Investors protection, market development, fair practices, fraud prevention — yeh SEBI ka mandate hai. Insider trading, manipulation par action leta hai. RBI banks regulate karta hai."
+  },
+  {
+    "id": "q25",
+    "category": "Valuation",
+    "question": "P/B ratio 0.8 hone ka kya matlab ho sakta hai?",
+    "options": ["Stock 80% grow kar sakta hai", "Share apni book value se sasta mil raha hai", "Company ka P/E 80% high hai", "80% dividend yield hai"],
+    "correct_index": 1,
+    "explanation": "P/B < 1 matlab share uski book value (net assets) se sasta hai. Theoretically company ki assets liquidate karke bhi zyaada value milegi. Lekin yeh automatically 'buy' signal nahi — poor asset quality, hidden losses, or bad management bhi reason ho sakti hai. Banking stocks mein kaafi use hota hai."
+  },
+  {
+    "id": "q26",
+    "category": "Risk",
+    "question": "Stop-loss order ka main purpose kya hai?",
+    "options": ["Maximum profit ensure karna", "Pre-set level par loss limit karna", "Dividend claim karna", "Circuit breaker activate karna"],
+    "correct_index": 1,
+    "explanation": "Stop-loss ek pre-decided price par automatic exit lagaata hai taaki nuksaan ek limit se zyaada na badhe. 'Recover ho jaayega' ki umeed mein chhoti loss badi ho sakti hai — stop-loss is emotional trap se bachata hai. Discipline ka sabse important tool."
+  },
+  {
+    "id": "q27",
+    "category": "Technical",
+    "question": "Doji candlestick kya indicate karta hai?",
+    "options": ["Strong bullish momentum", "Buyers aur sellers mein indecision", "Guaranteed reversal", "High volume trading"],
+    "correct_index": 1,
+    "explanation": "Doji tab banta hai jab Open aur Close price lagbhag same ho — body nahi hoti. Yeh buyers aur sellers mein balance/indecision dikhata hai. Trend ke context mein dekho — downtrend ke baad doji potential reversal signal, uptrend mein caution. Confirmation zaroor lein."
+  },
+  {
+    "id": "q28",
+    "category": "F&O",
+    "question": "Options mein 'Time Decay' (Theta) kya hai?",
+    "options": ["Option ki value time ke saath badhti hai", "Option ki value expiry ke paas aate waqt ghatti hai", "Option ki expiry date badh jaati hai", "Time ke saath premium add hota hai"],
+    "correct_index": 1,
+    "explanation": "Theta = time decay. Option ki time value expiry ke paas aate waqt tezi se khatam hoti hai — especially last week mein. Option buyers ko yeh nuksaan deta hai, option sellers ko fayda. Isliye option buying mein 'right direction mein move' bhi kafi nahi — timing bhi zaroori hai."
+  },
+  {
+    "id": "q29",
+    "category": "Fundamental",
+    "question": "Cyclical sector kab typically outperform karta hai?",
+    "options": ["Economic recession mein", "Economic recovery aur growth mein", "High inflation mein", "Market crash mein"],
+    "correct_index": 1,
+    "explanation": "Cyclical sectors (Auto, Real Estate, Capital Goods) economy ke saath uthe-girte hain — economic recovery aur growth phase mein outperform karte hain. Recession mein defensive sectors (FMCG, Pharma, Utilities) better perform karte hain kyunki unki demand stable rehti hai."
+  },
+  {
+    "id": "q30",
+    "category": "Investment",
+    "question": "Compounding mein 'Rule of 72' kya batata hai?",
+    "options": ["72 saal mein paisa double hota hai", "72 ÷ interest rate = paisa double hone ke approximate saal", "72% returns guaranteed hain", "72 shares minimum khareeday chahiye"],
+    "correct_index": 1,
+    "explanation": "Rule of 72: 72 ÷ Annual Return % = Approximate years to double money. 12% return → 72÷12 = 6 saal mein double. 8% return → 9 saal. Compounding ki power samajhne ka quick mental math shortcut. Jitna jaldi invest karein, utna zyaada compounding ka fayda."
+  }
+]

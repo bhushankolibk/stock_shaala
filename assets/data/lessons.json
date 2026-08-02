@@ -1,0 +1,130 @@
+[
+  {
+    "id": "l1",
+    "title": "What is the Stock Market?",
+    "category": "Basics",
+    "duration_min": 6,
+    "xp": 20,
+    "content": "Stock market ek aisi jagah hai jahan companies ke shares (hisse) khareede aur beche jaate hain. Jab aap kisi company ka share khareedte hain, to aap us company ke ek chhote hisse ke maalik ban jaate hain — ise shareholder kehte hain.\n\nCompanies share isliye bechti hain taaki public se paisa juta sakein aur apna business badhaa sakein. Iska fayda investors ko yeh milta hai ki company grow kare to unke shares ki value bhi badhti hai.\n\nBharat mein do mukhya exchanges hain:\n• NSE (National Stock Exchange) — NIFTY 50 index\n• BSE (Bombay Stock Exchange) — SENSEX index\n\nDono par SEBI (Securities and Exchange Board of India) ki nigrani rehti hai jo investors ke haq mein kaam karta hai.\n\nShare ki keemat demand aur supply se tay hoti hai. Agar zyaada log kisi share ko khareedna chahte hain to price badhti hai. Agar zyaada log bechna chahte hain to price girti hai.\n\nYaad rakhein: Stock market ek long-term wealth creation tool hai, get-rich-quick scheme nahi. Yeh content sirf educational hai."
+  },
+  {
+    "id": "l2",
+    "title": "NSE vs BSE — The Difference",
+    "category": "Basics",
+    "duration_min": 5,
+    "xp": 20,
+    "content": "BSE (Bombay Stock Exchange) 1875 mein establish hua — Asia ka sabse purana stock exchange. Iski benchmark index SENSEX hai jo 30 financially strong companies track karta hai.\n\nNSE (National Stock Exchange) 1992 mein shuru hua aur aaj trading volume ke hisaab se duniya ke top exchanges mein hai. Iski flagship index NIFTY 50 hai jo top 50 companies track karta hai.\n\nDono exchanges ke beech key differences:\n• SENSEX: 30 companies, 1979 base year (base value 100)\n• NIFTY 50: 50 companies, 1995 base year (base value 1,000)\n• NSE mein trading volume BSE se kaafi zyaada hai\n• F&O (Futures & Options) segment mainly NSE par active hai\n\nAam investor ke liye practically dono mein zyaada farq nahi. Zyaadatar badi companies dono par listed hain. Broker aapko dono access deta hai.\n\nSENSEX 30,000+ aur NIFTY 22,000+ ke levels aaj ke time pe hain — yeh numbers economy ki growth dikhate hain. 2000 mein NIFTY ~1,500 tha!"
+  },
+  {
+    "id": "l3",
+    "title": "Reading Candlestick Charts",
+    "category": "Technical",
+    "duration_min": 10,
+    "xp": 30,
+    "content": "Candlestick chart price action samajhne ka sabse popular tool hai. Ek candlestick chaar cheezein dikhati hai: Open, High, Low, Close (OHLC).\n\nCandlestick ke do parts hain:\n1. BODY: Open aur Close ke beech ka thick part\n2. WICK / SHADOW: Body ke upar-neeche ki patli lines\n\nRang ka matlab:\n• Green/White candle: Close > Open → us period mein buyers jeet gaye\n• Red/Black candle: Close < Open → us period mein sellers jeet gaye\n\nBody size ka matlab:\n• Badi body = strong directional momentum\n• Choti body = indecision, buyers aur sellers barabar\n• Doji (lagbhag koi body nahi) = bada indecision\n\nKuch important patterns:\n• Hammer: Choti body + lamba lower wick → possible bullish reversal\n• Shooting Star: Choti body + lamba upper wick → possible bearish reversal\n• Engulfing: Badi candle ne pichhli choti candle ko 'engulf' kiya → reversal signal\n• Morning Star: 3-candle bullish reversal pattern\n\nTimeframes:\n1 min, 5 min, 15 min, hourly, daily, weekly — har trader alag timeframe prefer karta hai.\n\nYeh sirf seekhne ke liye hai. Patterns fail bhi hote hain — koi bhi indicator ya pattern 100% reliable nahi hota."
+  },
+  {
+    "id": "l4",
+    "title": "Support & Resistance",
+    "category": "Technical",
+    "duration_min": 8,
+    "xp": 30,
+    "content": "Support aur resistance technical analysis ke do sabse fundamental concepts hain.\n\nSUPPORT:\nWoh price level jahan girti hui keemat ko buying support milta hai aur price ruk jaati hai ya bounce karti hai. Buyers is level par value dekhte hain aur khareedne lagte hain. Historical price chart par aisa level jahan multiple times price ruka ho — woh strong support hota hai.\n\nRESISTANCE:\nWoh price level jahan badhti hui keemat ko selling pressure milta hai aur price ruk jaati hai ya gir jaati hai. Sellers is level par stock expensive lagrta hai aur bechne lagte hain.\n\nRole Reversal:\nJab price resistance level todkar upar jaaye → woh level aage chal kar support ban jaata hai. Jab price support level todkar neeche jaaye → woh level aage chal kar resistance ban jaata hai. Yeh concept bahut useful hai entry/exit timing ke liye.\n\nSupport/Resistance types:\n• Horizontal levels: Simple price levels\n• Trendlines: Upar ya neeche jaate hue lines\n• Moving Averages: Dynamic support/resistance\n• Round numbers: ₹100, ₹500, ₹1000 — psychological levels\n• Fibonacci levels: 38.2%, 50%, 61.8% retracement\n\nImportant: Yeh levels exact nahi, 'zones' hote hain. Strong support ke pass bhi stop-loss zaroor lagaayein."
+  },
+  {
+    "id": "l5",
+    "title": "P/E, P/B, EPS Explained",
+    "category": "Fundamental",
+    "duration_min": 12,
+    "xp": 40,
+    "content": "Company ki valuation samajhna investing ka core skill hai. Teen key metrics:\n\n1. EPS (Earnings Per Share)\nFormula: Net Profit ÷ Total Shares\nYeh batata hai har share kitna profit generate karta hai. EPS badhna = company grow kar rahi hai.\nExample: Profit ₹5,000 cr, 500 cr shares → EPS = ₹10\n\n2. P/E (Price to Earnings) Ratio\nFormula: Share Price ÷ EPS\nInvestors har ₹1 earning ke liye kitna pay kar rahe hain.\nHigh P/E → High growth expectation ya overvaluation\nLow P/E → Slow growth, undervaluation, ya company mein koi problem\nSector comparison zaroori: IT ka P/E 25 normal, banking ka P/E 12 normal ho sakta hai.\n\nP/E ke types:\n• Trailing P/E: Last 12 months ka actual EPS use karta hai\n• Forward P/E: Next 12 months ka estimated EPS use karta hai\n• PEG Ratio: P/E ÷ EPS Growth Rate (1 se kam = potentially good)\n\n3. P/B (Price to Book) Ratio\nFormula: Share Price ÷ Book Value Per Share\nBook value = Total Assets − Total Liabilities (net worth)\nP/B < 1 = stock book value se kam (theoretically 'cheap')\nBanking stocks ke liye kaafi use hota hai\n\nValuation Traps:\n• Cheap P/E waali company ki koi growth nahi ho sakti\n• High P/E waali company agar tez grow kare to value ho sakti hai\n• Always qualitative analysis (business quality, management) ke saath combine karein\n\nYeh sirf educational concepts hain, koi investment advice nahi."
+  },
+  {
+    "id": "l6",
+    "title": "How IPOs Work",
+    "category": "Fundamental",
+    "duration_min": 8,
+    "xp": 30,
+    "content": "IPO (Initial Public Offering) tab hota hai jab koi private company pehli baar public ko apne shares bechti hai. Iske baad company stock exchange par list hoti hai aur shares secondary market mein trade hone lagte hain.\n\nIPO Process step-by-step:\n1. Company SEBI ke paas Draft Red Herring Prospectus (DRHP) file karti hai\n2. SEBI review karta hai aur approval deta hai\n3. Price band announce hoti hai (jaise ₹100–₹105)\n4. Subscription period: 3 din (aap bid lagate hain)\n5. Allotment: Demand > Supply ho to lottery se allot hota hai\n6. Listing: Stock exchange par trading shuru\n\nIPO Categories:\n• QIB (Qualified Institutional Buyers): 50% reserved\n• NII (Non-Institutional Investors, ₹2 lakh+): 15% reserved\n• Retail (₹2 lakh tak): 35% reserved\n\nIPO Risks:\n• Listing loss possible: Price below issue price open ho sakti hai\n• Lock-in: Promoters 6 mahine tak shares nahi bech sakte\n• Gray market premium (GMP) sirf speculation hai, guaranteed listing gain nahi\n• Company fresh capital raise kar rahi hai ya existing investors exit kar rahe hain — dono mein fark samjho (OFS)\n\nIPO mein ghus jaao aur kal double — yeh soch bahut risky hai. Har IPO profitable nahi hota."
+  },
+  {
+    "id": "l7",
+    "title": "F&O Basics (Futures & Options)",
+    "category": "F&O",
+    "duration_min": 12,
+    "xp": 40,
+    "content": "Futures aur Options derivatives hain — matlab unki value kisi underlying asset (stocks, index, commodity) se derive hoti hai.\n\nFUTURES:\nEk contract jisme aap future date par fixed price par asset khareedne ya bechne ka VAADA karte hain. Dono parties (buyer aur seller) bound hain. Expiry date hoti hai (monthly: last Thursday of month).\n\nOPTIONS:\nAdhikaar milta hai, obligation nahi.\n• CALL Option: Khareedne ka adhikaar (price badhne par faayda)\n• PUT Option: Bechne ka adhikaar (price girne par faayda)\nOption khareedne ke liye 'premium' dena padta hai\n\nOptions Terminology:\n• Strike Price: Jis price par exercise karna hai\n• Expiry Date: Option kab expire hoga\n• ITM (In The Money): Option mein intrinsic value hai\n• OTM (Out of The Money): Option mein intrinsic value nahi\n• ATM (At The Money): Strike ≈ Current Price\n• Premium: Option ki cost (buyers dete hain, sellers receive karte hain)\n\nWhy F&O is risky:\n• SEBI ke 2024 study: 93% individual F&O traders lose money\n• Average loss per trader ₹2 lakh per year\n• High leverage: Thoda margin se bada position — profit bhi zyaada, loss bhi zyaada\n• Time decay (Theta): Options ki value time ke saath ghatti rehti hai\n\nYeh information sirf samajhne ke liye hai. F&O absolute beginners ke liye nahi. Consult a financial advisor."
+  },
+  {
+    "id": "l8",
+    "title": "Diversification & Risk Management",
+    "category": "Fundamental",
+    "duration_min": 7,
+    "xp": 30,
+    "content": "Diversification risk management ki sabse proven strategy hai. 'Apne saare ande ek tokri mein mat rakho' — yeh core idea hai.\n\nDiversification ke levels:\n1. Sectors: IT, FMCG, Banking, Pharma, Auto — alag sectors alag market conditions mein differently behave karte hain\n2. Market Cap: Large-cap (stability) + Mid-cap (growth) + Small-cap (high risk/reward)\n3. Asset Classes: Stocks + Bonds + Gold + Real Estate\n4. Geography: Indian + International stocks (US index funds, etc.)\n\nCorrelation:\nDiversification tab best kaam karta hai jab assets low ya negative correlation rakhein. Gold aur stocks often inversely correlated hote hain — market gire to gold badh sakta hai.\n\nOver-diversification bhi problem hai:\n25+ stocks manage karna mushkil. Returns dilute hote hain. Focus nahi rehta. 15-20 quality companies across sectors enough hain most retail investors ke liye.\n\nPosition Sizing:\nHar stock mein equal amount ya risk-based allocation? Common rule: Kisi bhi ek stock mein portfolio ka 5-10% se zyaada nahi.\n\nRebalancing:\nSaal mein 1-2 baar portfolio rebalance karein. Jo assets zyaada badhe unhe thoda trim karein, jo peeche reh gaye unhe add karein. Target allocation maintain karein.\n\nRemember: Diversification losses eliminate nahi karta, reduce karta hai. Returns ki koi guarantee nahi hoti."
+  },
+  {
+    "id": "l9",
+    "title": "Demat Account & How to Start",
+    "category": "Basics",
+    "duration_min": 8,
+    "xp": 25,
+    "content": "Stock market mein invest karne ke liye aapko tikh tarah ke accounts chahiye:\n\n1. DEMAT ACCOUNT\nShares ko electronic form mein store karne ke liye. Jaise bank mein paisa rakhte hain, Demat mein shares rakhe jaate hain. India mein CDSL aur NSDL do depositories hain. Broker aapka DP (Depository Participant) hota hai.\n\n2. TRADING ACCOUNT\nBuy/sell orders place karne ke liye. Trading account ko Demat aur bank account se link karna padta hai.\n\n3. BANK ACCOUNT\nFunds add/withdraw karne ke liye.\n\nAccount kaise kholein:\n• Reputable SEBI-registered broker chunein (Zerodha, Groww, Upstox, Angel One, etc.)\n• Online process: 15-30 minutes\n• KYC documents: Aadhar, PAN, bank details, signature\n• Video KYC ya physical verification\n• Account 1-3 din mein activate\n\nBroker charges samjhein:\n• Brokerage: Har trade par charge (discount brokers: ₹20/trade flat ya free equity delivery)\n• AMC (Annual Maintenance Charge): Demat account ka yearly charge\n• STT (Securities Transaction Tax): Government charge, automatic\n• Exchange charges, GST — har transaction mein lagte hain\n\nPAN card MANDATORY hai — iske bina trading nahi ho sakti. Minor (18 se kam) ke liye guardian supervised account hota hai.\n\nFirst investment karne se pehle — padhein, seekhein, virtual trading try karein."
+  },
+  {
+    "id": "l10",
+    "title": "Mutual Funds & SIP",
+    "category": "Investment",
+    "duration_min": 10,
+    "xp": 35,
+    "content": "Mutual fund ek professionally managed investment vehicle hai jahan many investors ka paisa pool hokar different securities mein invest kiya jaata hai.\n\nMutual Fund Types:\n• Equity Funds: Mainly stocks mein invest (high risk, high potential return)\n• Debt Funds: Bonds, government securities (low-medium risk)\n• Hybrid Funds: Equity + Debt mix\n• Index Funds: Specific index track karte hain (low cost)\n• ELSS (Equity Linked Saving Scheme): Tax saving + equity (80C benefit, 3 year lock-in)\n• Liquid Funds: Short-term debt (emergency fund ke liye)\n\nKey Terms:\n• NAV: Fund ki per unit value, daily update\n• AUM: Fund ki total managed assets\n• Expense Ratio: Fund manage karne ki annual fee (% mein)\n• Exit Load: Ek certain period se pehle baahir nikalne par charge\n\nDirect vs Regular Plans:\n• Regular: Broker/distributor ke through — higher expense ratio\n• Direct: AMC se seedha — lower expense ratio, higher returns long term mein\n• Difference 0.5-1% saalaana — 20 saal mein bahut bada fark\n\nSIP (Systematic Investment Plan):\nHar month ek fixed amount automatically invest — market upar ho ya neeche.\nFayda: Rupee Cost Averaging (market girne par zyaada units), discipline, small amounts se start\nMinimum: ₹100-500/month se bhi shuru kar sakte hain\nPower of SIP: ₹10,000/month, 20 saal, 12% return → ~₹99 lakh approximate corpus\n\nCancelling SIP market girne par sabse badi galti hai — wahi time cheapest units milti hain!\n\nYeh sirf educational hai. Invest karne se pehle financial goals aur risk profile samjhein."
+  },
+  {
+    "id": "l11",
+    "title": "Order Types: Market, Limit, SL",
+    "category": "Basics",
+    "duration_min": 7,
+    "xp": 25,
+    "content": "Trading platform par share khareedne/bechne ke liye order lagaate hain. Order types samajhna bahut zaroori hai.\n\n1. MARKET ORDER\nCurrent available best price par turant execute hoga. Fast execution guaranteed, exact price nahi. Liquid stocks mein market order theek hai, illiquid mein kaafi nuksaan ho sakta hai.\nExample: 'Abhi Infosys 500 shares khareedne hain, chahe price kuch bhi ho'\n\n2. LIMIT ORDER\nAap ek maximum (buy ke liye) ya minimum (sell ke liye) price set karte hain. Order sirf us price par ya better price par execute hoga. Execution guaranteed nahi — agar price wahan na pahunche, order pending rehega.\nExample: 'Infosys ₹1,450 ya usse kam par khareedna chahta hoon'\n\n3. STOP LOSS (SL) ORDER\nJab price ek trigger level chhue, tab order activate hota hai. Risk management ke liye use hota hai.\n• SL (Stop Loss Limit): Trigger price + Limit price dono set karo\n• SL-M (Stop Loss Market): Trigger par market order execute hota hai — fast execution\n\n4. GTT (Good Till Triggered)\nZerodha jaisi platforms par: Ek price set karo jo trigger hone par automatically order place kare. Roz market dekhne ki zaroorat nahi.\n\n5. AMO (After Market Order)\nMarket hours ke baad order place karo, agle din open par execute hoga.\n\nPractical Tips:\n• Volatile news events mein market order avoid karein (slippage hoti hai)\n• Har position par stop loss zaroor lagaayein\n• Limit order mein thoda buffer rakhein — exact round number par bahut log order lagate hain\n\nYeh mechanics samajhna trading mein mistakes se bachata hai."
+  },
+  {
+    "id": "l12",
+    "title": "Corporate Actions Explained",
+    "category": "Fundamental",
+    "duration_min": 8,
+    "xp": 30,
+    "content": "Companies apne shareholders ke liye important decisions lete hain — inhe Corporate Actions kehte hain. Yeh share price ko directly affect karte hain.\n\n1. DIVIDEND\nCompany profit ka hissa shareholders ko distribute karti hai. Ex-Dividend Date: Is date ke pehle share hold karna zaroori. Dividend Date pe automatically price adjust ho jaati hai.\nTypes: Interim Dividend (year ke beech), Final Dividend (year end), Special Dividend (one-time)\n\n2. STOCK SPLIT\nShares chhote pieces mein tod dena. 2:1 split → 1 share ke 2 ban gaye, price aadhi. Total value same. Benefit: Liquidity badhti hai, zyaada affordable hota hai.\n\n3. BONUS ISSUE\nExisting shareholders ko free mein extra shares. Company reserves se fund karta hai, nayi capital nahi aati. 1:1 bonus → 1 share ke saath 1 aur milega, price aadhi. Similar to split but accounting different.\n\n4. RIGHTS ISSUE\nExisting shareholders ko market price se SASTE mein nayi shares khareedne ka adhikaar. Company capital raise karna chahti hai. Accept karo (cheap shares), becho (rights entitlement bhi tradeable), ya ignore karo.\n\n5. BUYBACK\nCompany apne hi shares market se wapas khareed kar cancel karti hai. Total shares kam → EPS badhti hai → remaining shares zyaada valuable. Signal: Management shares undervalued maanti hai.\n\n6. MERGER/ACQUISITION\nDo companies ek ho jaati hain (merger) ya ek doosre ko acquire krti hai. Typically acquirer ke shares girate hain, target ke badhte hain.\n\nEx-Date ka dhyan zaroor rakhein — corporate action se pehle holdings confirm karein."
+  },
+  {
+    "id": "l13",
+    "title": "How to Read a Balance Sheet",
+    "category": "Fundamental",
+    "duration_min": 12,
+    "xp": 45,
+    "content": "Balance Sheet company ki financial health ka snapshot hai — ek specific date par kya hai uske paas (assets), kya dena hai (liabilities), aur net worth kitni hai (equity).\n\nFormula: Assets = Liabilities + Shareholders' Equity (yeh HAMESHA equal hote hain)\n\nASSETS (Company ke paas kya hai):\nCurrent Assets (1 saal mein convert hone wale):\n• Cash & Cash Equivalents\n• Accounts Receivable (dusron se leni hai)\n• Inventory\n\nNon-Current Assets (long-term):\n• Fixed Assets (factories, machines)\n• Intangibles (brands, patents)\n• Investments\n\nLIABILITIES (Company ko kya dena hai):\nCurrent Liabilities:\n• Accounts Payable (suppliers ko dena hai)\n• Short-term loans\n\nNon-Current Liabilities:\n• Long-term debt/bonds\n\nSHAREHOLDERS' EQUITY:\nShare capital + Retained Earnings (ab tak ka accumulated profit)\n\nKey Ratios from Balance Sheet:\n• Current Ratio: Current Assets ÷ Current Liabilities (> 2 = good)\n• Debt-to-Equity: Total Debt ÷ Equity\n• Asset Turnover: Revenue ÷ Total Assets (efficiency)\n• Working Capital: Current Assets − Current Liabilities\n\nRed Flags:\n• Rapidly growing receivables (customers pay nahi kar rahe)\n• Inventory build-up (goods sell nahi ho rahe)\n• High debt with low cash\n• Negative equity (accumulated losses)\n\nBalance sheet akela kafi nahi — P&L aur Cash Flow statement ke saath padhein. Yeh educational framework hai."
+  },
+  {
+    "id": "l14",
+    "title": "Taxation on Stock Market Gains",
+    "category": "Fundamental",
+    "duration_min": 9,
+    "xp": 35,
+    "content": "Stock market se kamaai par tax lagta hai — yeh samajhna financial planning ke liye zaroori hai.\n\nCAPITAL GAINS TAX (FY2024-25 updated rules):\n\nEquity Shares & Equity Mutual Funds:\n• STCG (Short Term Capital Gain): 12 mahine se kam hold → 20% tax\n• LTCG (Long Term Capital Gain): 12+ mahine hold → ₹1.25 lakh tak exempt, upar 12.5% (indexation benefit nahi)\n\nDebt Mutual Funds:\n• 2023 ke baad: Slab rate ke hisaab se tax (investment period regardless)\n\nDividend:\n• Aapki income mein add hoga, slab rate pe tax\n• ₹5,000+ dividend par TDS bhi hota hai\n\nF&O:\n• Business income mana jaata hai → slab rate\n• Tax audit bhi lag sakta hai\n• Losses carry forward ho sakte hain\n\nTAX SAVING TIPS (legal):\n• ELSS funds: ₹1.5 lakh tak 80C deduction, 3 year lock-in\n• LTCG Harvesting: Saal ke ant mein thoda profit book karo ₹1.25 lakh limit ke andar\n• Tax Loss Harvesting: Underperforming stocks mein loss book kar ke profitable trades ka tax offset karein\n\nGross Receipts nahi, NET GAINS par tax hota hai. Brokerage aur STT charges reduce karti hain taxable income.\n\nIMPORTANT: Tax laws change hote rehte hain. Apne specific situation ke liye CA ya tax professional se consult karein. Yeh general educational information hai."
+  },
+  {
+    "id": "l15",
+    "title": "Understanding Market Indices",
+    "category": "Basics",
+    "duration_min": 7,
+    "xp": 25,
+    "content": "Market Index ek basket of stocks ka performance track karta hai. Yeh overall market ya ek sector ki health dikhata hai.\n\nIndia ke Major Indices:\n• NIFTY 50: NSE ki top 50 companies by market cap (broad market)\n• SENSEX: BSE ki top 30 companies\n• NIFTY 500: Top 500 companies (broader market)\n• NIFTY Bank: Banking sector\n• NIFTY IT: IT sector\n• NIFTY Pharma: Pharmaceutical sector\n• NIFTY Midcap 100: Medium sized companies\n• NIFTY Smallcap 100: Smaller companies\n\nIndex Calculation:\nNIFTY 50 free-float market cap weighted index hai. Badi company ka zyaada weight hota hai. Reliance, TCS, HDFC Bank, Infosys — top weights hain. Ek badi company ka bada move NIFTY ko zyaada affect karta hai.\n\nIndex Rebalancing:\nHar 6 mahine (June, December) mein NIFTY review hota hai. Underperformers bahar, new companies andar. Index mein shamil hona aksar company ke liye bullish signal hota hai.\n\nGlobal Indices Connection:\n• S&P 500 (USA), Dow Jones, NASDAQ: Indian market par asar dalta hai\n• VIX (Volatility Index): 'Fear gauge' — high VIX = high uncertainty\n• India VIX 15-20 normal, 30+ = high fear\n\nIndex ka level sirf number hai — context samjho. NIFTY 1,000 se 22,000 tak aana = 22x growth in ~28 years = ~12% CAGR approximate."
+  },
+  {
+    "id": "l16",
+    "title": "Sector Analysis: Picking the Right Sector",
+    "category": "Fundamental",
+    "duration_min": 10,
+    "xp": 35,
+    "content": "Stock market mein har sector alag economic conditions mein alag behave karta hai. Yeh samajhna portfolio allocation mein madad karta hai.\n\nCYCLICAL vs DEFENSIVE SECTORS:\n\nCyclical (economy ke saath uthe-gire):\n• Auto: Car sales GDP growth ke saath correlated\n• Real Estate: Interest rates aur income par dependent\n• Steel/Metal: Global commodity prices\n• Capital Goods: Infrastructure spending cycle\n\nDefensive (stable demand, economy se kam impact):\n• FMCG: Soap, toothpaste — recession mein bhi bikta hai\n• Pharma: Dawai ki zaroorat hamesha rehti hai\n• Utilities: Bijli, paani — demand stable\n• IT Services (partially): Long-term contracts, steady revenue\n\nSector Rotation Theory:\nEconomy ki alag stages mein alag sectors outperform karte hain:\n1. Recovery: Cyclicals, Real Estate\n2. Growth: IT, Consumer Discretionary\n3. Slowdown: FMCG, Pharma, Utilities\n4. Recession: Gold, Bonds, Cash\n\nKey Metrics per Sector:\n• Banking: NPA (Non-Performing Assets), NIMs, CAR\n• FMCG: Volume growth, rural penetration\n• IT: Deal wins, utilization rates, attrition\n• Auto: Volume data (monthly), EV transition\n• Pharma: ANDA approvals (US), domestic prescription market\n\nConcentrating too much in one sector = undiversified risk. Industry cycles can last years. Sector ETFs ek convenient way hai specific sector mein invest karne ka."
+  }
+]

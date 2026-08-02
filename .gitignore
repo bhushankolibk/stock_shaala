@@ -1,0 +1,13 @@
+.dart_tool/
+.idea/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.packages
+pubspec.lock
+
+# Secrets — never commit
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart
