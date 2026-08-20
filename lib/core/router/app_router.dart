@@ -11,6 +11,8 @@ import '../../features/home/main_shell.dart';
 import '../../features/learn/concept_cards_page.dart';
 import '../../features/learn/lesson_detail_page.dart';
 import '../../features/quiz/quiz_page.dart';
+import '../../features/game/chart_game_page.dart';
+import '../../features/calculators/calculators_page.dart';
 import '../../features/simulation/stock_detail_page.dart';
 import '../../features/news/stock_news_page.dart';
 import '../../features/stock_list/stock_list_page.dart';
@@ -29,6 +31,8 @@ class AppRouter {
           path: '/concept-cards',
           builder: (_, __) => const ConceptCardsPage()),
       GoRoute(path: '/quiz', builder: (_, __) => const QuizPage()),
+      GoRoute(path: '/chart-game', builder: (_, __) => const ChartGamePage()),
+      GoRoute(path: '/calculators', builder: (_, __) => const CalculatorsPage()),
       GoRoute(
         path: '/lesson',
         builder: (_, state) => LessonDetailPage(lesson: state.extra as Lesson),

@@ -222,6 +222,8 @@ class _LessonsTabState extends State<_LessonsTab>
         else
           ...visible.map(_lessonRow),
         const SizedBox(height: 14),
+        _gameCta(),
+        const SizedBox(height: 14),
         _conceptCardsCta(),
       ],
     );
@@ -330,6 +332,73 @@ class _LessonsTabState extends State<_LessonsTab>
       ),
     );
   }
+
+  Widget _gameCta() => GlassCard(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
+        ),
+        borderColor: AppColors.accent.withValues(alpha: 0.35),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: AppColors.accent.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(
+                        color: AppColors.accent.withValues(alpha: 0.3)),
+                  ),
+                  child: const Text('MINI GAME',
+                      style: TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1,
+                          color: AppColors.accent)),
+                ),
+                const Text('+XP Rewards',
+                    style: TextStyle(fontSize: 11, color: AppColors.up)),
+              ],
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Bull vs Bear: Chart Breakout Master 📈',
+              style: TextStyle(
+                  fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
+            ),
+            const SizedBox(height: 4),
+            const Text(
+              'Practice technical price action and chart patterns under timed rounds!',
+              style: TextStyle(
+                  fontSize: 11, height: 1.4, color: AppColors.muted),
+            ),
+            const SizedBox(height: 10),
+            GestureDetector(
+              onTap: () => context.push('/chart-game'),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 9),
+                decoration: BoxDecoration(
+                  gradient: AppColors.accentGradient,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Text('Play Chart Master Mini Game →',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.black)),
+              ),
+            ),
+          ],
+        ),
+      );
 
   Widget _conceptCardsCta() => GlassCard(
         gradient: const LinearGradient(

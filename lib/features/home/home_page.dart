@@ -72,23 +72,21 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: AppColors.card,
         onRefresh: _load,
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 14, 16, 24),
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
           children: [
             _header(name, user?.photoURL),
             const SizedBox(height: 14),
-            Row(children: [
-              Pill('🔥 $_streak Day Streak', AppColors.accent),
-              const SizedBox(width: 6),
-              Pill('⚡ $_xp XP', AppColors.up),
-            ]),
-            const SizedBox(height: 14),
             _marketCard(),
             const SizedBox(height: 14),
-            const Center(child: BannerAdWidget()),
+            _gameBannerCard(),
+            const SizedBox(height: 14),
+            _quickHubSection(),
             const SizedBox(height: 14),
             if (_challenge != null) _challengeCard(_challenge!),
             const SizedBox(height: 14),
             _moversSection(),
+            const SizedBox(height: 16),
+            const Center(child: BannerAdWidget()),
           ],
         ),
       ),
@@ -98,30 +96,43 @@ class _HomePageState extends State<HomePage> {
   Widget _header(String name, String? photo) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
             children: [
-              const Text('Namaste 👋',
-                  style: TextStyle(fontSize: 12, color: AppColors.muted)),
-              Text(name,
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.w700)),
+              CircleAvatar(
+                radius: 20,
+                backgroundColor: AppColors.accent,
+                backgroundImage: photo != null ? NetworkImage(photo) : null,
+                child: photo == null
+                    ? Text(name.substring(0, 1),
+                        style: const TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold))
+                    : null,
+              ),
+              const SizedBox(width: 10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('Namaste 👋',
+                      style: TextStyle(fontSize: 11, color: AppColors.muted)),
+                  Text(name,
+                      style: const TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.bold)),
+                ],
+              ),
             ],
           ),
-          CircleAvatar(
-            radius: 18,
-            backgroundColor: AppColors.accent,
-            backgroundImage: photo != null ? NetworkImage(photo) : null,
-            child: photo == null
-                ? Text(name.substring(0, 1),
-                    style: const TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.w700))
-                : null,
+          Row(
+            children: [
+              Pill('🔥 $_streak', AppColors.accent),
+              const SizedBox(width: 4),
+              Pill('⚡ $_xp XP', AppColors.up),
+            ],
           ),
         ],
       );
 
   Widget _marketCard() => GlassCard(
+        padding: const EdgeInsets.all(12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -132,7 +143,8 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                         fontSize: 10,
                         color: AppColors.muted,
-                        letterSpacing: 0.5)),
+                        letterSpacing: 0.5,
+                        fontWeight: FontWeight.bold)),
                 GestureDetector(
                   onTap: _load,
                   child: Container(
@@ -154,7 +166,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 10),
             if (_loading)
               const SizedBox(
-                  height: 50,
+                  height: 48,
                   child: Center(
                       child: CircularProgressIndicator(
                           color: AppColors.accent, strokeWidth: 2)))
@@ -173,19 +185,19 @@ class _HomePageState extends State<HomePage> {
 
   Widget _indexChip(Quote q) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 3),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         decoration: BoxDecoration(
-            color: AppColors.dim, borderRadius: BorderRadius.circular(12)),
+            color: AppColors.dim, borderRadius: BorderRadius.circular(10)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(q.name,
                 style: const TextStyle(fontSize: 9, color: AppColors.muted),
                 overflow: TextOverflow.ellipsis),
-            const SizedBox(height: 3),
+            const SizedBox(height: 2),
             Text(q.price.toStringAsFixed(0),
                 style: AppTheme.mono(
-                    size: 13,
+                    size: 12,
                     weight: FontWeight.w700,
                     color: q.isUp ? AppColors.up : AppColors.down)),
             Text('${q.isUp ? '▲' : '▼'} ${Fmt.pct(q.changePercent)}',
@@ -195,6 +207,176 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       );
+
+  Widget _gameBannerCard() => GlassCard(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
+        ),
+        borderColor: AppColors.accent.withValues(alpha: 0.4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                _tag('MINI GAME', AppColors.accent),
+                const Spacer(),
+                const Text('🔥 Hot',
+                    style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.accent)),
+              ],
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Bull vs Bear: Chart Master 📈',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+            const SizedBox(height: 2),
+            const Text(
+              'Test technical chart breakout skills in 10-sec rounds!',
+              style: TextStyle(
+                  fontSize: 11, height: 1.3, color: AppColors.muted),
+            ),
+            const SizedBox(height: 10),
+            GestureDetector(
+              onTap: () => context.push('/chart-game'),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 9),
+                decoration: BoxDecoration(
+                  gradient: AppColors.accentGradient,
+                  borderRadius: BorderRadius.circular(9),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.play_arrow_rounded,
+                        color: Colors.black, size: 18),
+                    SizedBox(width: 4),
+                    Text(
+                      'PLAY CHART MASTER NOW',
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 0.5,
+                          color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+
+  Widget _quickHubSection() => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('Quick Features',
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: _hubTile(
+                  title: 'Calculators',
+                  subtitle: 'SIP, CAGR & Risk',
+                  icon: Icons.calculate_outlined,
+                  color: AppColors.blue,
+                  onTap: () => context.push('/calculators'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: _hubTile(
+                  title: 'Concept Cards',
+                  subtitle: 'Bite-sized Learn',
+                  icon: Icons.style_outlined,
+                  color: AppColors.purple,
+                  onTap: () => context.push('/concept-cards'),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: _hubTile(
+                  title: 'Stock Universe',
+                  subtitle: '100+ Live Quotes',
+                  icon: Icons.show_chart_rounded,
+                  color: AppColors.up,
+                  onTap: () => context.push('/stock-list'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: _hubTile(
+                  title: 'Quiz Arena',
+                  subtitle: 'Earn Bonus XP',
+                  icon: Icons.quiz_outlined,
+                  color: AppColors.accent,
+                  onTap: () => context.push('/quiz'),
+                ),
+              ),
+            ],
+          ),
+        ],
+      );
+
+  Widget _hubTile({
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: BoxDecoration(
+          color: AppColors.card,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(7),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Icon(icon, size: 16, color: color),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title,
+                      style: const TextStyle(
+                          fontSize: 12, fontWeight: FontWeight.bold)),
+                  Text(subtitle,
+                      style: const TextStyle(
+                          fontSize: 9, color: AppColors.muted),
+                      overflow: TextOverflow.ellipsis),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   Widget _challengeCard(QuizQuestion q) => GlassCard(
         gradient: const LinearGradient(
@@ -220,7 +402,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             Text(q.question,
                 style: const TextStyle(
-                    fontSize: 12, height: 1.55, fontWeight: FontWeight.w500)),
+                    fontSize: 12, height: 1.5, fontWeight: FontWeight.w500)),
             const SizedBox(height: 10),
             ...List.generate(q.options.length, (i) {
               final selected = _selectedOption == i;
@@ -273,8 +455,8 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text('Top Movers',
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700)),
-          const SizedBox(height: 10),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 8),
           ..._movers.map((q) => GestureDetector(
                 onTap: () => context.push('/stock',
                     extra: {'symbol': q.symbol, 'name': q.name}),

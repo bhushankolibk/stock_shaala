@@ -1,7 +1,7 @@
 name: stockshaala
 description: StockShaala - Indian Stock Market Learning App (Educational Only)
 publish_to: 'none'
-version: 1.0.8+9
+version: 1.0.9+10
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
