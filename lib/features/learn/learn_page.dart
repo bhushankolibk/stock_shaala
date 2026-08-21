@@ -48,6 +48,23 @@ class _LearnPageState extends State<LearnPage>
                     style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
                 const Spacer(),
                 GestureDetector(
+                  onTap: () => context.push('/ebooks'),
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 6),
+                    padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: AppColors.accent.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: AppColors.accent.withValues(alpha: 0.25)),
+                    ),
+                    child: const Text('eBooks',
+                        style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.accent)),
+                  ),
+                ),
+                GestureDetector(
                   onTap: () => context.push('/concept-cards'),
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),

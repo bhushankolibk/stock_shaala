@@ -16,7 +16,10 @@ import '../../features/calculators/calculators_page.dart';
 import '../../features/simulation/stock_detail_page.dart';
 import '../../features/news/stock_news_page.dart';
 import '../../features/stock_list/stock_list_page.dart';
+import '../../features/ebooks/ebook_list_page.dart';
+import '../../features/ebooks/ebook_reader_page.dart';
 import '../../data/models/lesson_model.dart';
+import '../../data/models/ebook_model.dart';
 
 class AppRouter {
   static final router = GoRouter(
@@ -60,6 +63,11 @@ class AppRouter {
       ),
       GoRoute(
           path: '/stock-list', builder: (_, __) => const StockListPage()),
+      GoRoute(path: '/ebooks', builder: (_, __) => const EbookListPage()),
+      GoRoute(
+        path: '/ebook-reader',
+        builder: (_, state) => EbookReaderPage(book: state.extra as Ebook),
+      ),
     ],
     observers: [
       if (sl<AnalyticsService>().observer != null)

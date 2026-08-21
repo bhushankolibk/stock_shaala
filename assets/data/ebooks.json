@@ -1,0 +1,60 @@
+{
+  "books": [
+    {
+      "id": "stock-basics",
+      "title": "Stock Market Basics (Hindi)",
+      "author": "StockShaala",
+      "description": "A beginner's guide to understanding stock market fundamentals in Hindi. If you want eBook PDF, contact stockshaala5@gmail.com",
+      "pdf_url": "https://storage.googleapis.com/stockshaala/e_books/StockShaala_Trade_Hindi.pdf",
+      "cover_image_url": "https://storage.googleapis.com/stockshaala/e_books/covers/stock-basics.jpg",
+      "version": 1,
+      "price": 49,
+      "size_mb": 3.2,
+      "is_active": true,
+      "order": 1,
+      "category": "Basics"
+    },
+    {
+      "id": "candlestick-patterns",
+      "title": "Candlestick Pattern Bible",
+      "author": "StockShaala",
+      "description": "Master technical candlestick chart patterns and breakout trading strategies. If you want eBook PDF, contact stockshaala5@gmail.com",
+      "pdf_url": "https://storage.googleapis.com/stockshaala/e_books/StockShaala_Trade_Hindi.pdf",
+      "cover_image_url": "",
+      "version": 1,
+      "price": 99,
+      "size_mb": 4.5,
+      "is_active": true,
+      "order": 2,
+      "category": "Technical"
+    },
+    {
+      "id": "option-trading-guide",
+      "title": "Futures & Options Handbook",
+      "author": "StockShaala",
+      "description": "Options trading basics, Call & Put strategies, Strike selection, and Option Greeks. If you want eBook PDF, contact stockshaala5@gmail.com",
+      "pdf_url": "https://storage.googleapis.com/stockshaala/e_books/StockShaala_Trade_Hindi.pdf",
+      "cover_image_url": "",
+      "version": 1,
+      "price": 149,
+      "size_mb": 5.0,
+      "is_active": true,
+      "order": 3,
+      "category": "Derivatives"
+    },
+    {
+      "id": "fundamental-guide",
+      "title": "Fundamental Analysis & Ratios",
+      "author": "StockShaala",
+      "description": "Understand P/E Ratio, P/B Ratio, ROE, Debt to Equity, balance sheet analysis, and intrinsic value. If you want eBook PDF, contact stockshaala5@gmail.com",
+      "pdf_url": "https://storage.googleapis.com/stockshaala/e_books/StockShaala_Trade_Hindi.pdf",
+      "cover_image_url": "",
+      "version": 1,
+      "price": 79,
+      "size_mb": 2.8,
+      "is_active": true,
+      "order": 4,
+      "category": "Fundamental"
+    }
+  ]
+}

@@ -10,6 +10,8 @@ import '../services/auth_service.dart';
 import '../services/blogger_service.dart';
 import '../services/content_service.dart';
 import '../services/disclaimer_service.dart';
+import '../services/ebook_access_service.dart';
+import '../services/ebook_download_service.dart';
 import '../services/equity_list_service.dart';
 import '../services/local_db_service.dart';
 import '../services/market_api_service.dart';
@@ -83,6 +85,10 @@ Future<void> setupDependencies() async {
   ads.loadInterstitial();
   ads.loadRewarded();
   sl.registerSingleton<AdService>(ads);
+
+  // Ebooks
+  sl.registerSingleton<EbookAccessService>(EbookAccessService());
+  sl.registerSingleton<EbookDownloadService>(EbookDownloadService());
 
   // Analytics & Messaging
   FirebaseAnalytics? analytics;

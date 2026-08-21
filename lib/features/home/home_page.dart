@@ -309,6 +309,16 @@ class _HomePageState extends State<HomePage> {
             children: [
               Expanded(
                 child: _hubTile(
+                  title: 'eBook Library',
+                  subtitle: 'Free Stock PDFs',
+                  icon: Icons.menu_book_rounded,
+                  color: AppColors.accent,
+                  onTap: () => context.push('/ebooks'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: _hubTile(
                   title: 'Stock Universe',
                   subtitle: '100+ Live Quotes',
                   icon: Icons.show_chart_rounded,
@@ -316,16 +326,22 @@ class _HomePageState extends State<HomePage> {
                   onTap: () => context.push('/stock-list'),
                 ),
               ),
-              const SizedBox(width: 8),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
               Expanded(
                 child: _hubTile(
                   title: 'Quiz Arena',
                   subtitle: 'Earn Bonus XP',
                   icon: Icons.quiz_outlined,
-                  color: AppColors.accent,
+                  color: AppColors.purple,
                   onTap: () => context.push('/quiz'),
                 ),
               ),
+              const SizedBox(width: 8),
+              const Expanded(child: SizedBox.shrink()),
             ],
           ),
         ],

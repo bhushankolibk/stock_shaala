@@ -4,6 +4,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import '../../data/models/lesson_model.dart';
 import '../../data/models/quiz_model.dart';
 import '../../data/models/concept_card_model.dart';
+import '../../data/models/ebook_model.dart';
 
 /// Loads learning content. Strategy:
 ///  1. Try Firebase Remote Config (so you can push new content without an update)
@@ -45,6 +46,18 @@ class ContentService {
     return list
         .map((e) => ConceptCard.fromJson(e as Map<String, dynamic>))
         .toList();
+  }
+
+  Future<List<Ebook>> loadEbooks() async {
+    final raw = await _read('ebooks_config', 'assets/data/ebooks.json');
+    final map = jsonDecode(raw) as Map<String, dynamic>;
+    final list = (map['books'] as List? ?? const []);
+    final books = list
+        .map((e) => Ebook.fromJson(e as Map<String, dynamic>))
+        .where((b) => b.isActive)
+        .toList();
+    books.sort((a, b) => a.order.compareTo(b.order));
+    return books;
   }
 
   Future<QuizQuestion> dailyChallenge() async {

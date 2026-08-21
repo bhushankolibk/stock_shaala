@@ -33,6 +33,15 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3382293395340097~8765684945"/>
+        <!-- Ensures background/terminated FCM notifications use a stable
+             channel and visible icon instead of the OEM-dependent default,
+             which some skins (MIUI, ColorOS, EMUI) mute or render blank. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="stockshaala_default_channel"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher"/>
         <property
             android:name="android.adservices.AD_SERVICES_CONFIG"
             android:resource="@xml/gma_ad_services_config"

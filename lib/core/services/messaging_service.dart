@@ -33,6 +33,12 @@ class MessagingService {
       _token = await _messaging.getToken();
       _messaging.onTokenRefresh.listen((t) => _token = t);
 
+      // Lets notifications be sent to "all_users" as a real FCM topic send
+      // instead of relying on Firebase Console's Analytics-based "All users"
+      // targeting, which can take 24-48h to pick up new devices and skips
+      // devices with limited Analytics data collection.
+      await _messaging.subscribeToTopic('all_users');
+
       FirebaseMessaging.onMessage.listen(onForegroundMessage);
       FirebaseMessaging.onMessageOpenedApp.listen(onMessageOpenedApp);
     } catch (e) {
