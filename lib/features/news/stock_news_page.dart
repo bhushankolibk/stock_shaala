@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import 'widgets/stock_news_view.dart';
 
 class StockNewsPage extends StatelessWidget {
@@ -15,6 +16,7 @@ class StockNewsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
+      bottomNavigationBar: const BannerAdWidget(),
       body: SafeArea(child: StockNewsView(instrumentKeys: instrumentKeys)),
     );
   }

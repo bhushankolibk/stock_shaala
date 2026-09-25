@@ -8,6 +8,28 @@ class AdService {
 
   Future<void> init() => MobileAds.instance.initialize().then((_) {});
 
+  /// Loads a single native ad rendered by the "listTileNative" Android
+  /// factory (see ListTileNativeAdFactory.kt), styled to blend into the
+  /// app's card-based feeds. Each call produces one ad — callers own and
+  /// dispose the returned [NativeAd] themselves (see NativeAdCard).
+  NativeAd createNativeAd({
+    required void Function(NativeAd ad) onLoaded,
+    required void Function() onFailed,
+  }) {
+    return NativeAd(
+      adUnitId: AppConstants.admobAdvanceNativeId,
+      factoryId: 'listTileNative',
+      request: const AdRequest(),
+      listener: NativeAdListener(
+        onAdLoaded: (ad) => onLoaded(ad as NativeAd),
+        onAdFailedToLoad: (ad, _) {
+          ad.dispose();
+          onFailed();
+        },
+      ),
+    )..load();
+  }
+
   BannerAd createBannerAd({required void Function() onLoaded}) {
     return BannerAd(
       adUnitId: AppConstants.admobBannerId,
@@ -28,21 +50,53 @@ class AdService {
     );
   }
 
-  void showInterstitialIfReady() {
+  /// Shows the preloaded interstitial, if any. [onAdClosed] fires once the
+  /// ad is dismissed or fails to show — pass it when the caller needs to
+  /// wait for the ad to close before proceeding (e.g. navigating).
+  void showInterstitialIfReady({void Function()? onAdClosed}) {
     final ad = _interstitial;
-    if (ad == null) return;
+    if (ad == null) {
+      onAdClosed?.call();
+      return;
+    }
     _interstitial = null;
     ad.fullScreenContentCallback = FullScreenContentCallback(
       onAdDismissedFullScreenContent: (a) {
         a.dispose();
         loadInterstitial();
+        onAdClosed?.call();
       },
       onAdFailedToShowFullScreenContent: (a, _) {
         a.dispose();
         loadInterstitial();
+        onAdClosed?.call();
       },
     );
     ad.show();
+  }
+
+  int _quickFeatureTaps = 0;
+
+  /// Frequency-capped interstitial for tap-throughs into a feature hub
+  /// (e.g. the home "Quick Features" grid). Showing a full-screen ad on
+  /// every single tap tanks navigation feel and burns through inventory,
+  /// so only every [everyNTaps]th tap even attempts one, and only when a
+  /// preloaded ad is actually ready.
+  ///
+  /// Returns true if an ad was shown — the caller should navigate from
+  /// [onAdClosed] instead of immediately, so the ad isn't skipped past.
+  /// Returns false if this tap didn't trigger an ad (not the Nth tap, or
+  /// none was ready) — the caller should navigate immediately instead.
+  bool maybeShowQuickFeatureInterstitial({
+    required void Function() onAdClosed,
+    int everyNTaps = 5,
+  }) {
+    _quickFeatureTaps++;
+    if (_quickFeatureTaps % everyNTaps != 0 || _interstitial == null) {
+      return false;
+    }
+    showInterstitialIfReady(onAdClosed: onAdClosed);
+    return true;
   }
 
   void loadRewarded() {

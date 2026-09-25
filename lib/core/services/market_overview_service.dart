@@ -13,6 +13,7 @@ class MarketOverviewService {
   final StockQuoteService _quoteService;
   final EquityListService _equityService;
   List<({String symbol, String name, String instrumentKey})>? _gainersPool;
+  List<({String symbol, String name, String instrumentKey})>? _sectorPool;
 
   MarketOverviewService(this._quoteService, this._equityService);
 
@@ -70,5 +71,41 @@ class MarketOverviewService {
               instrumentKey: s.instrumentKey),
     ]..sort((a, b) => b.changePercent.compareTo(a.changePercent));
     return resolved.take(limit).toList();
+  }
+
+  Future<List<({String symbol, String name, String instrumentKey})>>
+      _resolveSectorPool() async {
+    final cached = _sectorPool;
+    if (cached != null) return cached;
+    final all = await _equityService.loadAll();
+    final bySymbol = {for (final e in all) e.tradingSymbol: e};
+    final resolved = [
+      for (final tag in StockUniverse.sectorTags)
+        if (StockUniverse.instrumentKeyFor(tag.symbol) != null ||
+            bySymbol[tag.symbol] != null)
+          (
+            symbol: tag.symbol,
+            name: bySymbol[tag.symbol]?.name ?? tag.symbol,
+            instrumentKey: StockUniverse.instrumentKeyFor(tag.symbol) ??
+                bySymbol[tag.symbol]!.instrumentKey,
+          ),
+    ];
+    _sectorPool = resolved;
+    return resolved;
+  }
+
+  /// Live quotes for the sector-tagged blue-chip pool
+  /// ([StockUniverse.sectorTags]) — used by the sector screener so a
+  /// sector filters ~50 stocks instead of just the curated 12.
+  Future<List<Quote>> fetchSectorPoolQuotes() async {
+    final pool = await _resolveSectorPool();
+    final keys = pool.map((s) => s.instrumentKey).toList();
+    final quotes = await _quoteService.fetchQuotes(keys);
+    return [
+      for (final s in pool)
+        if (quotes[s.instrumentKey] != null)
+          Quote.fromLiveQuote(s.symbol, s.name, quotes[s.instrumentKey]!,
+              instrumentKey: s.instrumentKey),
+    ];
   }
 }

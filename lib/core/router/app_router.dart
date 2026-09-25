@@ -18,6 +18,9 @@ import '../../features/news/stock_news_page.dart';
 import '../../features/stock_list/stock_list_page.dart';
 import '../../features/ebooks/ebook_list_page.dart';
 import '../../features/ebooks/ebook_reader_page.dart';
+import '../../features/screener/sector_screener_page.dart';
+import '../../features/compare/stock_compare_page.dart';
+import '../../features/rewards/rewards_page.dart';
 import '../../data/models/lesson_model.dart';
 import '../../data/models/ebook_model.dart';
 
@@ -63,11 +66,16 @@ class AppRouter {
       ),
       GoRoute(
           path: '/stock-list', builder: (_, __) => const StockListPage()),
+      GoRoute(
+          path: '/screener', builder: (_, __) => const SectorScreenerPage()),
+      GoRoute(
+          path: '/compare', builder: (_, __) => const StockComparePage()),
       GoRoute(path: '/ebooks', builder: (_, __) => const EbookListPage()),
       GoRoute(
         path: '/ebook-reader',
         builder: (_, state) => EbookReaderPage(book: state.extra as Ebook),
       ),
+      GoRoute(path: '/rewards', builder: (_, __) => const RewardsPage()),
     ],
     observers: [
       if (sl<AnalyticsService>().observer != null)

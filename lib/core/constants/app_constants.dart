@@ -40,7 +40,7 @@ class AppConstants {
   static const admobBannerId = 'ca-app-pub-3382293395340097/3630163948';
   static const admobInterstitialId = 'ca-app-pub-3382293395340097/5014408127';
   static const admobRewardedId = 'ca-app-pub-3382293395340097/1075163113';
-
+  static const admobAdvanceNativeId = 'ca-app-pub-3382293395340097/1620596550';
   static const kLessonCompletionCount = 'lesson_completion_count';
 
   // Watchlist — stored fully on-device, no API involved.

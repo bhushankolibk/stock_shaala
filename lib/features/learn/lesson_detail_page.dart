@@ -7,6 +7,7 @@ import '../../core/services/analytics_service.dart';
 import '../../core/services/progress_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/app_widgets.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import '../../data/models/lesson_model.dart';
 
 class LessonDetailPage extends StatelessWidget {
@@ -17,6 +18,7 @@ class LessonDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(lesson.category)),
+      bottomNavigationBar: const BannerAdWidget(),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(18, 8, 18, 24),

@@ -13,6 +13,7 @@ class Fmt {
       '${v >= 0 ? '+' : ''}${v.toStringAsFixed(2)}%';
   static String signedMoney(num v) =>
       '${v >= 0 ? '+' : '-'}${_inr.format(v.abs())}';
+  static String compact(num v) => NumberFormat.compact(locale: 'en_IN').format(v);
 
   /// Relative time like "5m ago", "3h ago", "2d ago".
   static String timeAgo(DateTime time) {

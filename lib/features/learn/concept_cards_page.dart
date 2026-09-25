@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/di/injection.dart';
 import '../../core/services/content_service.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import '../../data/models/concept_card_model.dart';
 
 class ConceptCardsPage extends StatefulWidget {
@@ -31,6 +32,7 @@ class _ConceptCardsPageState extends State<ConceptCardsPage> {
       appBar: AppBar(
         title: Text('Concept Cards  ${_cards.isEmpty ? '' : '${_index + 1}/${_cards.length}'}'),
       ),
+      bottomNavigationBar: const BannerAdWidget(),
       body: _cards.isEmpty
           ? const Center(
               child: CircularProgressIndicator(

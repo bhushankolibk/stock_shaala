@@ -116,6 +116,64 @@ class StockUniverse {
     'TRENT',
   ];
 
+  /// Sector tags for the same blue-chip pool as [gainersPoolSymbols], used
+  /// by the sector screener so "Banking"/"IT"/etc. filter ~50 stocks
+  /// instead of just the curated 12 in [stocks]. Resolved against the
+  /// bundled equity list at runtime, same as [gainersPoolSymbols]; a
+  /// symbol not found there is silently skipped.
+  static const List<({String symbol, String sector})> sectorTags = [
+    (symbol: 'RELIANCE', sector: 'Energy'),
+    (symbol: 'TCS', sector: 'IT'),
+    (symbol: 'HDFCBANK', sector: 'Banking'),
+    (symbol: 'ICICIBANK', sector: 'Banking'),
+    (symbol: 'INFY', sector: 'IT'),
+    (symbol: 'HINDUNILVR', sector: 'FMCG'),
+    (symbol: 'ITC', sector: 'FMCG'),
+    (symbol: 'SBIN', sector: 'Banking'),
+    (symbol: 'BHARTIARTL', sector: 'Telecom'),
+    (symbol: 'BAJFINANCE', sector: 'Finance'),
+    (symbol: 'KOTAKBANK', sector: 'Banking'),
+    (symbol: 'LT', sector: 'Infra'),
+    (symbol: 'HCLTECH', sector: 'IT'),
+    (symbol: 'AXISBANK', sector: 'Banking'),
+    (symbol: 'ASIANPAINT', sector: 'FMCG'),
+    (symbol: 'MARUTI', sector: 'Auto'),
+    (symbol: 'SUNPHARMA', sector: 'Pharma'),
+    (symbol: 'TITAN', sector: 'FMCG'),
+    (symbol: 'ULTRACEMCO', sector: 'Infra'),
+    (symbol: 'WIPRO', sector: 'IT'),
+    (symbol: 'NESTLEIND', sector: 'FMCG'),
+    (symbol: 'ONGC', sector: 'Energy'),
+    (symbol: 'NTPC', sector: 'Energy'),
+    (symbol: 'POWERGRID', sector: 'Energy'),
+    (symbol: 'M&M', sector: 'Auto'),
+    (symbol: 'TATASTEEL', sector: 'Metals'),
+    (symbol: 'TATAMOTORS', sector: 'Auto'),
+    (symbol: 'ADANIENT', sector: 'Infra'),
+    (symbol: 'ADANIPORTS', sector: 'Infra'),
+    (symbol: 'JSWSTEEL', sector: 'Metals'),
+    (symbol: 'COALINDIA', sector: 'Energy'),
+    (symbol: 'BAJAJFINSV', sector: 'Finance'),
+    (symbol: 'HDFCLIFE', sector: 'Finance'),
+    (symbol: 'SBILIFE', sector: 'Finance'),
+    (symbol: 'DRREDDY', sector: 'Pharma'),
+    (symbol: 'GRASIM', sector: 'Infra'),
+    (symbol: 'CIPLA', sector: 'Pharma'),
+    (symbol: 'EICHERMOT', sector: 'Auto'),
+    (symbol: 'BRITANNIA', sector: 'FMCG'),
+    (symbol: 'DIVISLAB', sector: 'Pharma'),
+    (symbol: 'APOLLOHOSP', sector: 'Healthcare'),
+    (symbol: 'HEROMOTOCO', sector: 'Auto'),
+    (symbol: 'INDUSINDBK', sector: 'Banking'),
+    (symbol: 'BPCL', sector: 'Energy'),
+    (symbol: 'TECHM', sector: 'IT'),
+    (symbol: 'UPL', sector: 'Chemicals'),
+    (symbol: 'HINDALCO', sector: 'Metals'),
+    (symbol: 'SHRIRAMFIN', sector: 'Finance'),
+    (symbol: 'LTIM', sector: 'IT'),
+    (symbol: 'TRENT', sector: 'FMCG'),
+  ];
+
   /// Upstox instrument_key for a given NSE symbol, e.g. "NSE_EQ|INE002A01018".
   static String? instrumentKeyFor(String nseSymbol) {
     for (final s in stocks) {

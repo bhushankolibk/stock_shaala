@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/widgets/native_ad_card.dart';
 import '../stock_list_controller.dart';
 import 'stock_list_item.dart';
+
+/// One native ad after every this many rows in the full stock list.
+const _adInterval = 20;
 
 /// Search field sliver — kept separate from the results so callers can
 /// place it wherever they like (e.g. above other sections) while still
@@ -66,10 +70,21 @@ List<Widget> buildStockListResultsSlivers({
               ),
             );
           }
+          final count = controller.filtered.length;
+          final adSlots = (count - 1) ~/ _adInterval;
           return SliverList.builder(
-            itemCount: controller.filtered.length,
+            itemCount: count + adSlots,
             itemBuilder: (context, i) {
-              final equity = controller.filtered[i];
+              final adsBefore = (i + 1) ~/ (_adInterval + 1);
+              final isAdSlot =
+                  (i + 1) % (_adInterval + 1) == 0 && adsBefore <= adSlots;
+              if (isAdSlot) {
+                return const Padding(
+                  padding: EdgeInsets.only(bottom: 6),
+                  child: NativeAdCard(),
+                );
+              }
+              final equity = controller.filtered[i - adsBefore];
               controller.markVisible(equity);
               return StockListItem(
                 equity: equity,

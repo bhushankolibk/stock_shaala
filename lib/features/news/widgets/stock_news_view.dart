@@ -5,8 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/services/stock_news_service.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/widgets/native_ad_card.dart';
 import '../../../data/models/stock_news_model.dart';
 import 'stock_news_card.dart';
+
+/// One native ad after every this many articles.
+const _adInterval = 6;
 
 /// Embeddable news list — used both standalone (StockNewsPage) and inside
 /// the Market tab's "News" sub-tab.
@@ -42,14 +46,14 @@ class _StockNewsViewState extends State<StockNewsView>
     if (oldWidget.instrumentKeys != widget.instrumentKeys) _load();
   }
 
-  Future<void> _load() async {
+  Future<void> _load({bool forceRefresh = false}) async {
     setState(() {
       _loading = true;
       _error = null;
     });
     try {
-      final byKey =
-          await sl<StockNewsService>().fetchNews(widget.instrumentKeys);
+      final byKey = await sl<StockNewsService>()
+          .fetchNews(widget.instrumentKeys, forceRefresh: forceRefresh);
       final seenLinks = <String>{};
       final flattened = byKey.values
           .expand((list) => list)
@@ -89,7 +93,7 @@ class _StockNewsViewState extends State<StockNewsView>
     final uri = Uri.tryParse(url);
     if (uri == null) return;
     if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
+      await launchUrl(uri, mode: LaunchMode.inAppBrowserView);
     }
   }
 
@@ -99,7 +103,7 @@ class _StockNewsViewState extends State<StockNewsView>
     return RefreshIndicator(
       color: AppColors.accent,
       backgroundColor: AppColors.card,
-      onRefresh: _load,
+      onRefresh: () => _load(forceRefresh: true),
       child: _body(),
     );
   }
@@ -137,13 +141,27 @@ class _StockNewsViewState extends State<StockNewsView>
         subtitle: 'There is no news for this stock in the last 7 days.',
       );
     }
+    // One NativeAdCard slotted in after every _adInterval articles.
+    final adSlots = (_news.length - 1) ~/ _adInterval;
     return ListView.builder(
       padding: const EdgeInsets.fromLTRB(16, 14, 16, 24),
-      itemCount: _news.length,
-      itemBuilder: (_, i) => StockNewsCard(
-        news: _news[i],
-        onTap: () => _openArticle(_news[i].articleLink),
-      ),
+      itemCount: _news.length + adSlots,
+      itemBuilder: (_, i) {
+        final adsBefore = (i + 1) ~/ (_adInterval + 1);
+        final isAdSlot =
+            (i + 1) % (_adInterval + 1) == 0 && adsBefore <= adSlots;
+        if (isAdSlot) {
+          return const Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: NativeAdCard(),
+          );
+        }
+        final newsIndex = i - adsBefore;
+        return StockNewsCard(
+          news: _news[newsIndex],
+          onTap: () => _openArticle(_news[newsIndex].articleLink),
+        );
+      },
     );
   }
 
@@ -171,13 +189,12 @@ class _StockNewsViewState extends State<StockNewsView>
                 Text(
                   subtitle,
                   textAlign: TextAlign.center,
-                  style:
-                      const TextStyle(fontSize: 11, color: AppColors.muted),
+                  style: const TextStyle(fontSize: 11, color: AppColors.muted),
                 ),
                 if (showRetry) ...[
                   const SizedBox(height: 14),
                   GestureDetector(
-                    onTap: _load,
+                    onTap: () => _load(forceRefresh: true),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16, vertical: 8),

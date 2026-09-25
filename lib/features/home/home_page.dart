@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/di/injection.dart';
+import '../../core/services/ad_service.dart';
 import '../../core/services/auth_service.dart';
 import '../../core/services/content_service.dart';
 import '../../core/services/market_overview_service.dart';
@@ -275,6 +276,18 @@ class _HomePageState extends State<HomePage> {
         ),
       );
 
+  /// Navigates to a Quick Features route, occasionally (every 5th tap
+  /// across all tiles, see AdService.maybeShowQuickFeatureInterstitial)
+  /// showing an interstitial first so it doesn't fire on every single tap.
+  void _goToHub(String route) {
+    final shown = sl<AdService>().maybeShowQuickFeatureInterstitial(
+      onAdClosed: () {
+        if (mounted) context.push(route);
+      },
+    );
+    if (!shown) context.push(route);
+  }
+
   Widget _quickHubSection() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -289,7 +302,7 @@ class _HomePageState extends State<HomePage> {
                   subtitle: 'SIP, CAGR & Risk',
                   icon: Icons.calculate_outlined,
                   color: AppColors.blue,
-                  onTap: () => context.push('/calculators'),
+                  onTap: () => _goToHub('/calculators'),
                 ),
               ),
               const SizedBox(width: 8),
@@ -299,7 +312,7 @@ class _HomePageState extends State<HomePage> {
                   subtitle: 'Bite-sized Learn',
                   icon: Icons.style_outlined,
                   color: AppColors.purple,
-                  onTap: () => context.push('/concept-cards'),
+                  onTap: () => _goToHub('/concept-cards'),
                 ),
               ),
             ],
@@ -313,7 +326,7 @@ class _HomePageState extends State<HomePage> {
                   subtitle: 'Free Stock PDFs',
                   icon: Icons.menu_book_rounded,
                   color: AppColors.accent,
-                  onTap: () => context.push('/ebooks'),
+                  onTap: () => _goToHub('/ebooks'),
                 ),
               ),
               const SizedBox(width: 8),
@@ -323,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                   subtitle: '100+ Live Quotes',
                   icon: Icons.show_chart_rounded,
                   color: AppColors.up,
-                  onTap: () => context.push('/stock-list'),
+                  onTap: () => _goToHub('/stock-list'),
                 ),
               ),
             ],
@@ -337,11 +350,43 @@ class _HomePageState extends State<HomePage> {
                   subtitle: 'Earn Bonus XP',
                   icon: Icons.quiz_outlined,
                   color: AppColors.purple,
-                  onTap: () => context.push('/quiz'),
+                  onTap: () => _goToHub('/quiz'),
                 ),
               ),
               const SizedBox(width: 8),
-              const Expanded(child: SizedBox.shrink()),
+              Expanded(
+                child: _hubTile(
+                  title: 'Compare Stocks',
+                  subtitle: 'Side-by-side view',
+                  icon: Icons.compare_arrows_rounded,
+                  color: AppColors.blue,
+                  onTap: () => _goToHub('/compare'),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: _hubTile(
+                  title: 'Sector Screener',
+                  subtitle: 'Filter by theme',
+                  icon: Icons.filter_alt_outlined,
+                  color: AppColors.down,
+                  onTap: () => _goToHub('/screener'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: _hubTile(
+                  title: 'Rewards & Offers',
+                  subtitle: 'Earn real cash',
+                  icon: Icons.card_giftcard_rounded,
+                  color: AppColors.up,
+                  onTap: () => _goToHub('/rewards'),
+                ),
+              ),
             ],
           ),
         ],

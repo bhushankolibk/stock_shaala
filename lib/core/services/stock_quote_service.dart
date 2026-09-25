@@ -33,7 +33,7 @@ class StockQuoteService {
                     ]
                   : []));
 
-  static const _base = 'https://api.upstox.com/v2/market-quote/quotes';
+  static const _base = 'https://api.upstox.com/v3/market-quote/quotes';
   static const _maxKeysPerRequest = 500;
 
   /// Fetches quotes for [instrumentKeys], keyed by instrument_key (matched

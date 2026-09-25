@@ -1,0 +1,21 @@
+[
+  {
+    "id": "upstox-referral",
+    "brand": "Upstox",
+    "logo_url": "https://storage.googleapis.com/stockshaala/rewards/upstox_logo.png",
+    "banner_url": "https://storage.googleapis.com/stockshaala/rewards/upstox_banner.jpg",
+    "title": "Open a Free Demat Account",
+    "subtitle": "India's most-trusted discount broker",
+    "description": "Sign up on Upstox using our referral code, complete your free KYC, and place your first trade to unlock your reward.",
+    "reward_text": "Earn ₹200",
+    "code": "STOCKSHAALA",
+    "cta_text": "Sign Up & Earn →",
+    "cta_url": "https://upstox.com/open-demat-account/?f=STOCKSHAALA",
+    "badge": "TRENDING",
+    "terms": "T&C apply. Reward credited after successful KYC and first trade. StockShaala is not a registered investment advisor; this is a referral partnership only.",
+    "gradient_start": "#1A2840",
+    "gradient_end": "#0F1923",
+    "is_active": true,
+    "order": 1
+  }
+]

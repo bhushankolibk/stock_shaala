@@ -12,6 +12,7 @@ import '../../core/services/ebook_access_service.dart';
 import '../../core/services/ebook_download_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/app_widgets.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import '../../data/models/ebook_model.dart';
 
 class EbookListPage extends StatefulWidget {
@@ -276,6 +277,7 @@ class _EbookListPageState extends State<EbookListPage> {
       appBar: AppBar(
         title: const Text('eBook Library 📚', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
       ),
+      bottomNavigationBar: const BannerAdWidget(),
       body: SafeArea(
         child: Column(
           children: [

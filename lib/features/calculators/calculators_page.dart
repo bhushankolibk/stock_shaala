@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import 'widgets/cagr_calculator_widget.dart';
 import 'widgets/position_size_calculator_widget.dart';
 import 'widgets/sip_calculator_widget.dart';
@@ -69,6 +70,7 @@ class _CalculatorsPageState extends State<CalculatorsPage>
           PositionSizeCalculatorWidget(),
         ],
       ),
+      bottomNavigationBar: const BannerAdWidget(),
     );
   }
 

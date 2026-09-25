@@ -14,6 +14,9 @@ class Quote extends Equatable {
   final double? week52Low;
   final double? previousClose;
   final String? instrumentKey;
+  final double? volume;
+  final double? upperCircuitLimit;
+  final double? lowerCircuitLimit;
 
   const Quote({
     required this.symbol,
@@ -27,6 +30,9 @@ class Quote extends Equatable {
     this.week52Low,
     this.previousClose,
     this.instrumentKey,
+    this.volume,
+    this.upperCircuitLimit,
+    this.lowerCircuitLimit,
   });
 
   bool get isUp => change >= 0;
@@ -68,8 +74,13 @@ class Quote extends Equatable {
         changePercent: q.changePercent,
         dayHigh: q.high,
         dayLow: q.low,
+        week52High: q.yearHigh,
+        week52Low: q.yearLow,
         previousClose: q.close,
         instrumentKey: instrumentKey,
+        volume: q.volume,
+        upperCircuitLimit: q.upperCircuitLimit,
+        lowerCircuitLimit: q.lowerCircuitLimit,
       );
 
   @override

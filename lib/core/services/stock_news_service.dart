@@ -42,15 +42,40 @@ class StockNewsService {
   static const _base = 'https://api.upstox.com/v2/news';
   static const _maxKeysPerRequest = 30;
 
+  /// News doesn't change second-to-second, so identical requests within
+  /// this window are served from cache instead of hitting the API again —
+  /// the same instrument-key set gets requested repeatedly as the user
+  /// switches the "All Stocks"/"My Watchlist" toggle, reopens a stock's
+  /// news page, or the widget rebuilds.
+  static const _cacheTtl = Duration(minutes: 5);
+  final _cache = <String, ({DateTime fetchedAt, Map<String, List<StockNews>> data})>{};
+
   /// Fetches news for [instrumentKeys], keyed by instrument_key.
   /// Splits into batches of 30 keys per request (Upstox's limit) and merges
-  /// the results.
+  /// the results. Served from an in-memory cache when the same key set was
+  /// fetched within [_cacheTtl], unless [forceRefresh] is set (pull-to-refresh).
   Future<Map<String, List<StockNews>>> fetchNews(
     List<String> instrumentKeys, {
     int pageNumber = 1,
     int pageSize = 100,
+    bool forceRefresh = false,
   }) async {
     if (instrumentKeys.isEmpty) return {};
+
+    final cacheKey =
+        '${(List<String>.of(instrumentKeys)..sort()).join(',')}|$pageNumber|$pageSize';
+    if (!forceRefresh) {
+      final cached = _cache[cacheKey];
+      if (cached != null &&
+          DateTime.now().difference(cached.fetchedAt) < _cacheTtl) {
+        if (kDebugMode) {
+          debugPrint('[StockNewsService] cache hit (${instrumentKeys.length} '
+              'key(s)), skipping API call.');
+        }
+        return cached.data;
+      }
+    }
+
     if (_token.isEmpty) {
       throw const StockNewsException(
           'News is not configured yet (missing Upstox token).');
@@ -68,6 +93,7 @@ class StockNewsService {
         merged.putIfAbsent(key, () => []).addAll(list);
       });
     }
+    _cache[cacheKey] = (fetchedAt: DateTime.now(), data: merged);
     return merged;
   }
 

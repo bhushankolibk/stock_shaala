@@ -8,6 +8,7 @@ import '../../core/services/content_service.dart';
 import '../../core/services/progress_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/app_widgets.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import '../../data/models/quiz_model.dart';
 
 class QuizPage extends StatefulWidget {
@@ -124,6 +125,7 @@ class _QuizPageState extends State<QuizPage> {
     return Scaffold(
       appBar: AppBar(
           title: Text('Quiz  ·  Q${_current + 1} of ${_questions.length}')),
+      bottomNavigationBar: const BannerAdWidget(),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(18, 8, 18, 24),

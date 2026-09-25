@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,6 +10,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/formatters.dart';
 import '../../core/widgets/app_widgets.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import '../../data/models/quote_model.dart';
 import '../../data/models/holding_model.dart';
 import 'portfolio_repository.dart';
@@ -112,6 +114,14 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   ),
                   const SizedBox(height: 14),
                   _portfolioHeader(),
+                  if (_snapshot!.positions.isNotEmpty) ...[
+                    const SizedBox(height: 14),
+                    const Text('PERFORMANCE',
+                        style:
+                            TextStyle(fontSize: 11, color: AppColors.muted)),
+                    const SizedBox(height: 8),
+                    _performanceSection(),
+                  ],
                   const SizedBox(height: 14),
                   const Text('HOLDINGS',
                       style:
@@ -127,6 +137,8 @@ class _PortfolioPageState extends State<PortfolioPage> {
                           TextStyle(fontSize: 11, color: AppColors.muted)),
                   const SizedBox(height: 8),
                   ..._quotes.take(4).map(_buyRow),
+                  const SizedBox(height: 16),
+                  const Center(child: BannerAdWidget()),
                 ],
               ),
       ),
@@ -225,6 +237,149 @@ class _PortfolioPageState extends State<PortfolioPage> {
           ],
         ),
       );
+
+  static const _pieColors = [
+    AppColors.accent,
+    AppColors.blue,
+    AppColors.up,
+    AppColors.purple,
+    AppColors.down,
+  ];
+
+  Widget _performanceSection() {
+    final positions = _snapshot!.positions;
+    final totalHoldingsValue = positions.fold<double>(
+        0, (sum, p) => sum + p.holding.currentValue(p.ltp));
+
+    return GlassCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('ALLOCATION',
+              style: TextStyle(fontSize: 9, color: AppColors.muted)),
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              SizedBox(
+                width: 96,
+                height: 96,
+                child: PieChart(
+                  PieChartData(
+                    sectionsSpace: 2,
+                    centerSpaceRadius: 26,
+                    sections: [
+                      for (var i = 0; i < positions.length; i++)
+                        PieChartSectionData(
+                          value: totalHoldingsValue == 0
+                              ? 1
+                              : positions[i]
+                                  .holding
+                                  .currentValue(positions[i].ltp),
+                          color: _pieColors[i % _pieColors.length],
+                          radius: 22,
+                          showTitle: false,
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (var i = 0; i < positions.length; i++)
+                      _allocationLegendRow(
+                        positions[i].holding.symbol,
+                        totalHoldingsValue == 0
+                            ? 0
+                            : positions[i].holding.currentValue(positions[i].ltp) /
+                                totalHoldingsValue *
+                                100,
+                        _pieColors[i % _pieColors.length],
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          const Text('P&L BY HOLDING',
+              style: TextStyle(fontSize: 9, color: AppColors.muted)),
+          const SizedBox(height: 10),
+          for (final p in positions) _pnlBarRow(p),
+        ],
+      ),
+    );
+  }
+
+  Widget _allocationLegendRow(String symbol, double pct, Color color) =>
+      Padding(
+        padding: const EdgeInsets.only(bottom: 6),
+        child: Row(
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+            ),
+            const SizedBox(width: 7),
+            Expanded(
+              child: Text(symbol,
+                  style: const TextStyle(
+                      fontSize: 11, fontWeight: FontWeight.w600)),
+            ),
+            Text('${pct.toStringAsFixed(0)}%',
+                style: AppTheme.mono(size: 11, color: AppColors.muted)),
+          ],
+        ),
+      );
+
+  Widget _pnlBarRow(({Holding holding, double ltp}) pos) {
+    final h = pos.holding;
+    final pnlPct = h.pnlPercent(pos.ltp);
+    final up = pnlPct >= 0;
+    final fraction = (pnlPct.abs() / 20).clamp(0.0, 1.0); // 20% = full bar
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 9),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 64,
+            child: Text(h.symbol,
+                overflow: TextOverflow.ellipsis,
+                style:
+                    const TextStyle(fontSize: 11, fontWeight: FontWeight.w600)),
+          ),
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: Stack(
+                children: [
+                  Container(height: 8, color: AppColors.dim),
+                  FractionallySizedBox(
+                    widthFactor: fraction,
+                    child: Container(
+                      height: 8,
+                      color: up ? AppColors.up : AppColors.down,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
+          SizedBox(
+            width: 56,
+            child: Text(Fmt.pct(pnlPct),
+                textAlign: TextAlign.right,
+                style: AppTheme.mono(
+                    size: 11, color: up ? AppColors.up : AppColors.down)),
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget _holdingRow(({Holding holding, double ltp}) pos) {
     final h = pos.holding;

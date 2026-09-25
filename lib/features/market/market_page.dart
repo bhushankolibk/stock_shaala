@@ -3,10 +3,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/di/injection.dart';
 import '../../core/services/market_overview_service.dart';
+import '../../core/services/watchlist_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/formatters.dart';
 import '../../core/widgets/app_widgets.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import '../../data/models/quote_model.dart';
 import '../../core/constants/stock_universe.dart';
 import '../news/widgets/stock_news_view.dart';
@@ -72,21 +74,35 @@ class _MarketPageState extends State<MarketPage>
                 const Text('Market',
                     style:
                         TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
-                GestureDetector(
-                  onTap: _load,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 9, vertical: 3),
-                    decoration: BoxDecoration(
-                      color: AppColors.accent.withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(7),
-                      border: Border.all(
-                          color: AppColors.accent.withValues(alpha: 0.2)),
+                Row(
+                  children: [
+                    _headerIconButton(
+                      icon: Icons.compare_arrows,
+                      onTap: () => context.push('/compare'),
                     ),
-                    child: Text('↻ Refresh',
-                        style:
-                            AppTheme.mono(size: 10, color: AppColors.accent)),
-                  ),
+                    const SizedBox(width: 8),
+                    _headerIconButton(
+                      icon: Icons.filter_alt_outlined,
+                      onTap: () => context.push('/screener'),
+                    ),
+                    const SizedBox(width: 8),
+                    GestureDetector(
+                      onTap: _load,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 9, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: AppColors.accent.withValues(alpha: 0.08),
+                          borderRadius: BorderRadius.circular(7),
+                          border: Border.all(
+                              color: AppColors.accent.withValues(alpha: 0.2)),
+                        ),
+                        child: Text('↻ Refresh',
+                            style: AppTheme.mono(
+                                size: 10, color: AppColors.accent)),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -113,14 +129,12 @@ class _MarketPageState extends State<MarketPage>
               controller: _tabController,
               children: [
                 _exploreTab(),
-                StockNewsView(
-                  instrumentKeys:
-                      StockUniverse.stocks.map((s) => s.instrumentKey).toList(),
-                ),
+                const _NewsTab(),
                 const WatchlistView(),
               ],
             ),
           ),
+          const BannerAdWidget(),
         ],
       ),
     );
@@ -286,4 +300,98 @@ class _MarketPageState extends State<MarketPage>
           ),
         ),
       );
+
+  Widget _headerIconButton(
+          {required IconData icon, required VoidCallback onTap}) =>
+      GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(6),
+          decoration: BoxDecoration(
+            color: AppColors.card,
+            borderRadius: BorderRadius.circular(7),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Icon(icon, size: 15, color: AppColors.muted),
+        ),
+      );
+}
+
+/// News sub-tab with an "All Stocks" / "My Watchlist" toggle, so the feed
+/// can be personalized to symbols the user actually cares about.
+class _NewsTab extends StatefulWidget {
+  const _NewsTab();
+
+  @override
+  State<_NewsTab> createState() => _NewsTabState();
+}
+
+class _NewsTabState extends State<_NewsTab> {
+  bool _watchlistOnly = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final watchlist = sl<WatchlistService>().items;
+    final watchlistKeys = watchlist.map((i) => i.instrumentKey).toList();
+    final universeKeys =
+        StockUniverse.stocks.map((s) => s.instrumentKey).toList();
+    final showWatchlist = _watchlistOnly && watchlistKeys.isNotEmpty;
+
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+          child: Row(
+            children: [
+              Expanded(
+                child: _toggleChip('All Stocks', !_watchlistOnly,
+                    () => setState(() => _watchlistOnly = false)),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: _toggleChip('My Watchlist', _watchlistOnly,
+                    () => setState(() => _watchlistOnly = true)),
+              ),
+            ],
+          ),
+        ),
+        if (_watchlistOnly && watchlistKeys.isEmpty)
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            child: Text(
+              'Your watchlist is empty — star a stock to personalize this feed.',
+              style: TextStyle(fontSize: 11, color: AppColors.muted),
+            ),
+          ),
+        Expanded(
+          child: StockNewsView(
+            instrumentKeys: showWatchlist ? watchlistKeys : universeKeys,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _toggleChip(String label, bool selected, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: selected
+              ? AppColors.accent.withValues(alpha: 0.15)
+              : AppColors.card,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+              color: selected ? AppColors.accent : AppColors.border),
+        ),
+        child: Text(label,
+            style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: selected ? AppColors.accent : AppColors.muted)),
+      ),
+    );
+  }
 }

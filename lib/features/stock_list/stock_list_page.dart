@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import 'stock_list_controller.dart';
 import 'widgets/stock_list_slivers.dart';
 
@@ -30,6 +31,7 @@ class _StockListPageState extends State<StockListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('All Stocks')),
+      bottomNavigationBar: const BannerAdWidget(),
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: _controller.refreshLoadedPrices,

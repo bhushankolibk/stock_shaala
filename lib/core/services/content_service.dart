@@ -5,6 +5,7 @@ import '../../data/models/lesson_model.dart';
 import '../../data/models/quiz_model.dart';
 import '../../data/models/concept_card_model.dart';
 import '../../data/models/ebook_model.dart';
+import '../../data/models/reward_offer_model.dart';
 
 /// Loads learning content. Strategy:
 ///  1. Try Firebase Remote Config (so you can push new content without an update)
@@ -58,6 +59,21 @@ class ContentService {
         .toList();
     books.sort((a, b) => a.order.compareTo(b.order));
     return books;
+  }
+
+  /// Rewards/referral offers (e.g. "Sign up on Upstox, earn ₹200") — RC
+  /// key "rewards_offers", pushed as a plain JSON array. Inactive offers
+  /// and offers missing an id are filtered out; the rest are sorted by
+  /// "order" ascending.
+  Future<List<RewardOffer>> loadRewards() async {
+    final raw = await _read('rewards_offers', 'assets/data/rewards.json');
+    final list = jsonDecode(raw) as List;
+    final offers = list
+        .map((e) => RewardOffer.fromJson(e as Map<String, dynamic>))
+        .where((o) => o.isActive && o.id.isNotEmpty)
+        .toList()
+      ..sort((a, b) => a.order.compareTo(b.order));
+    return offers;
   }
 
   Future<QuizQuestion> dailyChallenge() async {

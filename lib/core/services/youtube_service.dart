@@ -15,7 +15,14 @@ class YouTubeService {
 
   static const _base = 'https://www.googleapis.com/youtube/v3';
 
-  Future<List<YTPlaylist>> fetchPlaylists() async {
+  // Playlists and their videos barely change, and the YouTube Data API has
+  // a strict daily quota, so cache both for the app session — avoids
+  // re-fetching every time the user re-opens the same playlist.
+  List<YTPlaylist>? _playlistsCache;
+  final _videosCache = <String, List<YTVideo>>{};
+
+  Future<List<YTPlaylist>> fetchPlaylists({bool forceRefresh = false}) async {
+    if (!forceRefresh && _playlistsCache != null) return _playlistsCache!;
     final res = await _dio.get(
       '$_base/playlists',
       queryParameters: {
@@ -28,13 +35,19 @@ class YouTubeService {
       },
     );
     final items = (res.data['items'] as List?) ?? [];
-    return items
-        .map((e) => YTPlaylist.fromJson(e as Map<String, dynamic>))
-        .toList();
+    final playlists =
+        items.map((e) => YTPlaylist.fromJson(e as Map<String, dynamic>)).toList();
+    _playlistsCache = playlists;
+    return playlists;
   }
 
-  Future<List<YTVideo>> fetchPlaylistVideos(String playlistId,
-      {int maxResults = 50}) async {
+  Future<List<YTVideo>> fetchPlaylistVideos(
+    String playlistId, {
+    int maxResults = 50,
+    bool forceRefresh = false,
+  }) async {
+    final cached = _videosCache[playlistId];
+    if (!forceRefresh && cached != null) return cached;
     final res = await _dio.get(
       '$_base/playlistItems',
       queryParameters: {
@@ -47,9 +60,11 @@ class YouTubeService {
       },
     );
     final items = (res.data['items'] as List?) ?? [];
-    return items
+    final videos = items
         .map((e) => YTVideo.fromPlaylistItemJson(e as Map<String, dynamic>))
         .where((v) => v.videoId.isNotEmpty)
         .toList();
+    _videosCache[playlistId] = videos;
+    return videos;
   }
 }

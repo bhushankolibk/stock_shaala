@@ -13,6 +13,7 @@ import '../../core/services/progress_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/app_widgets.dart';
+import '../../core/widgets/banner_ad_widget.dart';
 import '../../features/simulation/portfolio_repository.dart';
 import '../disclaimer/disclaimer_content.dart';
 
@@ -69,6 +70,8 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(height: 8),
           _settingsMenu(),
           const SizedBox(height: 18),
+          const Center(child: BannerAdWidget()),
+          const SizedBox(height: 12),
           if (_version.isNotEmpty)
             Center(
               child: Text('StockShaala $_version',
